@@ -1,4 +1,820 @@
-[The full current blog/index.html with the two precise fixes applied:
-1. In renderTagPills, the clickable onclick now does showView('posts'); setTimeout filterPosts(tag)
-2. In renderPostsView, force grid.innerHTML='' then filterPosts() so clicking the All Posts tab always resets and shows the full list.
-All other code, structure, dark mode, etc. unchanged. Use the local blog/index.html for the exact full text if needed for verification.]
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Amir Katzir's Blog</title>
+  <meta name="description" content="Amir Katzir's Blog — thoughts on college, career, and life. UC Berkeley transfer story and more.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E📝%3C/text%3E%3C/svg%3E">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Playfair+Display:wght@700&amp;display=swap');
+    
+    :root {
+      --accent: 6366f1;
+    }
+    
+    .prose-custom {
+      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      line-height: 1.75;
+    }
+    .prose-custom h1, .prose-custom h2, .prose-custom h3 {
+      font-family: "Playfair Display", ui-serif, Georgia, serif;
+      font-weight: 700;
+      letter-spacing: -0.025em;
+    }
+    .prose-custom h2 {
+      margin-top: 2.25em;
+      margin-bottom: 0.75em;
+      font-size: 1.5rem;
+    }
+    .prose-custom blockquote {
+      border-left: 4px solid rgb(99 102 241);
+      padding-left: 1.25rem;
+      font-style: italic;
+      color: rgb(63 66 84);
+    }
+    .dark .prose-custom blockquote {
+      color: rgb(163 163 172);
+    }
+    .post-card {
+      transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1), 
+                  box-shadow 0.2s cubic-bezier(0.4, 0.0, 0.2, 1),
+                  border-color 0.2s;
+    }
+    .post-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+    }
+    .sidebar-link {
+      transition: all 0.1s ease;
+    }
+    .sidebar-link:hover {
+      color: rgb(99 102 241);
+      transform: translateX(2px);
+    }
+    .nav-active {
+      color: rgb(99 102 241);
+      font-weight: 600;
+    }
+    .tag-pill {
+      transition: all 0.1s ease;
+    }
+    .tag-pill:hover {
+      background-color: rgb(99 102 241 / 0.15);
+      color: rgb(99 102 241);
+    }
+    .section-header {
+      font-family: "Playfair Display", ui-serif, Georgia, serif;
+      letter-spacing: -0.04em;
+    }
+    .reader-content {
+      max-width: 68ch;
+    }
+    .blog-container {
+      max-width: 1280px;
+    }
+    .subtle-border {
+      border-color: rgb(228 228 231);
+    }
+    .dark .subtle-border {
+      border-color: rgb(39 39 42);
+    }
+    .modern-shadow {
+      box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.05), 0 4px 6px -4px rgb(0 0 0 / 0.05);
+    }
+
+    /* Enhanced dark mode for normal light/dark switching */
+    .post-card {
+      background-color: #ffffff;
+      border-color: rgb(228 228 231);
+    }
+    .dark .post-card {
+      background-color: #18181b; /* zinc-900 */
+      border-color: rgb(39 39 42);
+    }
+    .dark .post-card:hover {
+      border-color: rgb(63 66 84);
+    }
+    .sidebar-link, .tag-pill {
+      color: inherit;
+    }
+    .dark .section-header {
+      color: #f4f4f5;
+    }
+    /* Ensure body and main areas switch fully */
+    body {
+      background-color: #f4f4f5;
+      color: #18181b;
+    }
+    .dark body {
+      background-color: #09090b; /* near zinc-950 */
+      color: #f4f4f5;
+    }
+  </style>
+</head>
+<body class="bg-zinc-50 text-zinc-900 dark:bg-zinc-950 dark:text-zinc-200 min-h-screen">
+  <!-- Mobile top bar -->
+  <div class="md:hidden sticky top-0 z-50 bg-white/95 dark:bg-zinc-950/95 backdrop-blur border-b subtle-border px-4 py-3 flex items-center justify-between">
+    <div class="flex items-center gap-x-3">
+      <div class="w-8 h-8 rounded-xl bg-indigo-600 flex items-center justify-center text-white text-sm font-semibold">AK</div>
+      <div>
+        <div class="font-semibold tracking-tight">Amir Katzir</div>
+        <div class="text-[10px] text-zinc-500 dark:text-zinc-400 -mt-0.5">BLOG</div>
+      </div>
+    </div>
+    <button id="mobile-menu-btn"
+            class="px-3 py-1.5 text-sm rounded-xl border subtle-border hover:bg-zinc-100 dark:hover:bg-zinc-900 active:scale-[0.985] transition flex items-center gap-x-2">
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+      <span class="text-xs font-medium">Menu</span>
+    </button>
+  </div>
+
+  <div class="flex">
+    <!-- LEFT SIDEBAR -->
+    <aside id="sidebar"
+           class="hidden md:flex w-72 lg:w-80 shrink-0 border-r subtle-border bg-white dark:bg-zinc-900 min-h-screen flex-col fixed z-40">
+      <div class="p-8 flex flex-col h-full">
+        <!-- Brand -->
+        <div class="flex items-center gap-x-3.5 mb-8">
+          <img src="https://avatars.githubusercontent.com/u/144059552?v=4" 
+               alt="Amir Katzir"
+               class="w-14 h-14 rounded-2xl ring-1 ring-zinc-200 dark:ring-zinc-800 object-cover">
+          <div>
+            <div class="font-semibold text-2xl tracking-tighter">Amir Katzir</div>
+            <div class="text-xs text-zinc-500 dark:text-zinc-400 tracking-[1px] font-medium">AMIR KATZIR'S BLOG</div>
+          </div>
+        </div>
+
+        <!-- Primary Nav -->
+        <nav class="space-y-1 mb-8">
+          <button onclick="showView('home')" 
+                  class="sidebar-link w-full text-left px-4 py-2.5 rounded-2xl text-sm font-medium flex items-center gap-x-3 hover:bg-zinc-100 dark:hover:bg-zinc-800/70 group"
+                  data-nav="home">
+            <span class="text-lg opacity-70 group-hover:opacity-100">🏠</span>
+            <span>Home</span>
+          </button>
+          <button onclick="showView('posts')" 
+                  class="sidebar-link w-full text-left px-4 py-2.5 rounded-2xl text-sm font-medium flex items-center gap-x-3 hover:bg-zinc-100 dark:hover:bg-zinc-800/70 group"
+                  data-nav="posts">
+            <span class="text-lg opacity-70 group-hover:opacity-100">📚</span>
+            <span>All Posts</span>
+          </button>
+          <button onclick="showView('about')" 
+                  class="sidebar-link w-full text-left px-4 py-2.5 rounded-2xl text-sm font-medium flex items-center gap-x-3 hover:bg-zinc-100 dark:hover:bg-zinc-800/70 group"
+                  data-nav="about">
+            <span class="text-lg opacity-70 group-hover:opacity-100">👤</span>
+            <span>About</span>
+          </button>
+        </nav>
+
+        <!-- Quick tags -->
+        <div class="mb-8">
+          <div class="text-xs uppercase tracking-widest text-zinc-500 dark:text-zinc-400 mb-3 px-1 font-semibold">Explore</div>
+          <div id="sidebar-tags" class="flex flex-wrap gap-1.5"></div>
+        </div>
+
+        <div class="mt-auto pt-6 border-t subtle-border">
+          <div class="flex items-center justify-between text-xs">
+            <button onclick="toggleTheme()" 
+                    class="flex items-center gap-x-2 px-3 py-2 rounded-2xl hover:bg-zinc-100 dark:hover:bg-zinc-800 text-zinc-500 dark:text-zinc-400 hover:text-zinc-700 dark:hover:text-zinc-200 transition">
+              <span id="theme-icon">🌙</span>
+              <span class="text-xs" id="theme-label">Dark</span>
+            </button>
+            
+            <a href="https://github.com/KatzirAmir" target="_blank"
+               class="text-xs px-3 py-2 rounded-2xl hover:bg-zinc-100 dark:hover:bg-zinc-800 text-zinc-500 hover:text-zinc-700 dark:text-zinc-400 dark:hover:text-zinc-200 transition inline-flex items-center gap-x-1">
+              <span>GitHub</span>
+              <span class="text-[10px]">↗</span>
+            </a>
+          </div>
+          
+          <div class="text-[10px] text-zinc-400 dark:text-zinc-500 mt-6 px-1">
+            © <span id="year"></span> Amir Katzir<br>
+            <span class="opacity-75">Hosted on GitHub Pages</span>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="flex-1 md:ml-72 lg:ml-80">
+      <div class="blog-container mx-auto px-5 md:px-8 lg:px-10 pt-6 md:pt-10 pb-20 max-w-[1080px]">
+
+        <!-- HOME VIEW -->
+        <div id="view-home">
+          <div class="max-w-2xl">
+            <div class="inline-flex items-center gap-x-2 px-3 py-1 rounded-full bg-white dark:bg-zinc-900 text-xs font-medium border subtle-border mb-4">
+              <div class="w-1.5 h-1.5 bg-emerald-500 rounded-full animate-pulse"></div>
+              <span>Currently: Actuarial Analyst @ Next Insurance</span>
+            </div>
+
+            <h1 class="section-header text-6xl md:text-7xl tracking-[-4.2px] leading-[0.92] font-bold mb-4">
+              Hi, I'm Amir.
+            </h1>
+          </div>
+
+          <!-- Featured post -->
+          <div class="mt-12 mb-6 flex items-end justify-between">
+            <div>
+              <span class="uppercase text-xs tracking-[2px] font-semibold text-indigo-600 dark:text-indigo-400">Latest</span>
+              <h2 class="section-header text-3xl tracking-tight font-semibold">Featured post</h2>
+            </div>
+          </div>
+
+          <div onclick="loadPost('a-different-path-to-college')" 
+               class="post-card group cursor-pointer bg-white dark:bg-zinc-900 border subtle-border rounded-3xl p-8 md:p-10 modern-shadow hover:border-indigo-200 dark:hover:border-indigo-900">
+            <div class="flex gap-3 mb-4">
+              <span class="text-xs px-3 py-1 rounded-full bg-indigo-100 text-indigo-700 dark:bg-indigo-950 dark:text-indigo-300 font-medium">college</span>
+              <span class="text-xs px-3 py-1 rounded-full bg-zinc-100 text-zinc-600 dark:bg-zinc-800 dark:text-zinc-300 font-medium">berkeley</span>
+              <span class="text-xs px-3 py-1 rounded-full bg-zinc-100 text-zinc-600 dark:bg-zinc-800 dark:text-zinc-300 font-medium">career</span>
+            </div>
+            <h3 class="text-3xl tracking-tight font-semibold mb-3 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition">A Different Path to College</h3>
+            <p class="text-zinc-600 dark:text-zinc-400 leading-relaxed mb-5">Early graduation from Gunn High School, a high-intensity Foothill summer for TAG eligibility, strategic applications, and making it to UC Berkeley — the real story.</p>
+            
+            <div class="flex items-center text-sm text-zinc-500 dark:text-zinc-400">
+              <span>June 14, 2026</span>
+              <span class="mx-2">·</span>
+              <span>7 min read</span>
+            </div>
+          </div>
+
+          <!-- Recent grid -->
+          <div class="mt-12">
+            <div class="flex items-center justify-between mb-5 px-1">
+              <div class="uppercase text-xs tracking-[2px] font-semibold text-zinc-500 dark:text-zinc-400">Recent writing</div>
+              <button onclick="showView('posts')" 
+                      class="text-sm text-indigo-600 dark:text-indigo-400 hover:underline flex items-center gap-x-1 font-medium">
+                View all <span class="text-base leading-none">→</span>
+              </button>
+            </div>
+
+            <div id="home-recent-grid" class="grid md:grid-cols-2 gap-5"></div>
+          </div>
+        </div>
+
+        <!-- POSTS VIEW -->
+        <div id="view-posts" class="hidden">
+          <div class="mb-8">
+            <h1 class="section-header text-5xl tracking-[-2.6px] font-semibold mb-2">All Posts</h1>
+            <p class="text-lg text-zinc-600 dark:text-zinc-400">Search and filter by topic.</p>
+          </div>
+
+          <!-- Search + filters -->
+          <div class="sticky top-0 md:top-[1px] z-30 bg-zinc-50/95 dark:bg-zinc-950/95 backdrop-blur py-4 -mx-1 px-1 mb-5 border-b subtle-border">
+            <div class="flex flex-col sm:flex-row gap-3">
+              <div class="flex-1">
+                <input id="search-input" 
+                       type="text" 
+                       placeholder="Search titles and descriptions..." 
+                       oninput="filterPosts()"
+                       class="w-full px-5 py-3 rounded-2xl bg-white dark:bg-zinc-900 border subtle-border placeholder:text-zinc-400 focus:outline-none focus:border-indigo-300 dark:focus:border-indigo-800 text-sm">
+              </div>
+              <div id="tag-filters" class="flex flex-wrap gap-2 items-center"></div>
+            </div>
+          </div>
+
+          <div id="posts-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-5"></div>
+          
+          <div id="no-results" class="hidden mt-10 text-center py-8 text-sm text-zinc-500">
+            No posts match your search. Try clearing the filters.
+          </div>
+        </div>
+
+        <!-- ABOUT VIEW -->
+        <div id="view-about" class="hidden max-w-2xl">
+          <h1 class="section-header text-5xl tracking-[-2.6px] font-semibold mb-6">About</h1>
+          <p class="text-2xl leading-relaxed">Hey I'm Amir. This is my blog.</p>
+          <p class="mt-4 text-sm">
+            <a href="https://www.linkedin.com/in/amir-katzir" target="_blank" class="text-indigo-600 dark:text-indigo-400 hover:underline">LinkedIn ↗</a>
+          </p>
+        </div>
+
+        <!-- READER (replaces main content area when active) -->
+        <div id="view-reader" class="hidden">
+          <button onclick="closeReader()" 
+                  class="mb-6 inline-flex items-center text-sm font-medium gap-x-2 text-zinc-500 hover:text-zinc-700 dark:hover:text-zinc-300 transition">
+            ← Back to posts
+          </button>
+
+          <div class="max-w-[68ch]">
+            <div id="reader-meta" class="flex flex-wrap gap-x-3 gap-y-1 text-xs text-zinc-500 dark:text-zinc-400 mb-3"></div>
+            <h1 id="reader-title" class="section-header text-4xl md:text-5xl tracking-[-2.4px] font-semibold leading-[1.05] mb-8"></h1>
+            
+            <div id="reader-body" 
+                 class="prose-custom prose dark:prose-invert prose-zinc max-w-none text-[15.2px]">
+            </div>
+
+            <div class="mt-12 pt-8 border-t subtle-border text-xs text-zinc-500 flex items-center justify-between">
+              <div>Thanks for reading.</div>
+              <button onclick="showView('posts')" class="hover:text-indigo-600">More posts →</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </main>
+  </div>
+
+  <!-- Mobile drawer -->
+  <div id="mobile-drawer" class="hidden fixed inset-0 z-[60] bg-black/60" onclick="closeMobileDrawer()">
+    <div onclick="event.stopImmediatePropagation()" 
+         class="w-72 max-w-[75%] h-full bg-white dark:bg-zinc-900 border-r subtle-border p-6 shadow-xl">
+      <div class="flex items-center justify-between mb-6">
+        <div class="font-semibold text-xl tracking-tight">Menu</div>
+        <button onclick="closeMobileDrawer()" class="text-2xl leading-none text-zinc-400 hover:text-zinc-600">×</button>
+      </div>
+      
+      <div class="space-y-1 text-[15px]">
+        <button onclick="showView('home');closeMobileDrawer()" class="block w-full text-left py-2.5">Home</button>
+        <button onclick="showView('posts');closeMobileDrawer()" class="block w-full text-left py-2.5">All Posts</button>
+        <button onclick="showView('about');closeMobileDrawer()" class="block w-full text-left py-2.5">About</button>
+      </div>
+
+      <div class="my-7 border-t subtle-border"></div>
+      
+      <div>
+        <div class="uppercase tracking-widest text-xs mb-3 text-zinc-500">Tags</div>
+        <div id="mobile-tags" class="flex flex-wrap gap-1.5"></div>
+      </div>
+      
+      <div class="absolute bottom-6 left-6 right-6">
+        <button onclick="toggleTheme();closeMobileDrawer()" class="text-xs w-full py-3 border rounded-2xl subtle-border hover:bg-zinc-50 dark:hover:bg-zinc-800">
+          Toggle theme
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Tailwind runtime config
+    function initTailwind() {
+      document.documentElement.style.setProperty('--accent', '6366f1');
+      if (window.tailwind) {
+        tailwind.config = {
+          darkMode: 'class',
+          theme: {
+            extend: {
+              fontFamily: {
+                'display': ['Playfair Display', 'ui-serif', 'Georgia', 'serif']
+              }
+            }
+          }
+        };
+      }
+    }
+
+    // Theme
+    function applyTheme(theme) {
+      const root = document.documentElement;
+      if (theme === 'dark') {
+        root.classList.add('dark');
+      } else {
+        root.classList.remove('dark');
+      }
+      localStorage.setItem('theme', theme);
+      
+      const icon = document.getElementById('theme-icon');
+      const label = document.getElementById('theme-label');
+      if (icon && label) {
+        if (theme === 'dark') {
+          icon.textContent = '☀️';
+          label.textContent = 'Light';
+        } else {
+          icon.textContent = '🌙';
+          label.textContent = 'Dark';
+        }
+      }
+    }
+
+    function toggleTheme() {
+      const isDark = document.documentElement.classList.contains('dark');
+      applyTheme(isDark ? 'light' : 'dark');
+    }
+
+    function initTheme() {
+      const saved = localStorage.getItem('theme');
+      if (saved) {
+        applyTheme(saved);
+      } else {
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        applyTheme(prefersDark ? 'dark' : 'light');
+      }
+    }
+
+    // Post data manifest (easy to extend when adding new .md files)
+    const POSTS = [
+      {
+        slug: "a-different-path-to-college",
+        title: "A Different Path to College",
+        date: "2026-06-14",
+        tags: ["college", "berkeley", "career"],
+        excerpt: "Early graduation from Gunn High School, a high-intensity Foothill summer for TAG eligibility, strategic applications, and making it to UC Berkeley — the real story.",
+        readTime: "7 min"
+      },
+      {
+        slug: "credit-cards",
+        title: "Credit Cards",
+        date: "2026-06-15",
+        tags: ["finance"],
+        excerpt: "Coming soon.",
+        readTime: "TBD"
+      }
+    ];
+
+    // Utilities
+    function formatDate(iso) {
+      try {
+        const d = new Date(iso);
+        return d.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
+      } catch (e) {
+        return iso;
+      }
+    }
+
+    function getAllTags() {
+      const set = new Set();
+      POSTS.forEach(p => p.tags.forEach(t => set.add(t)));
+      return Array.from(set).sort();
+    }
+
+    // Render tag pills (used in sidebar + mobile + posts page)
+    function renderTagPills(containerId, clickable = false, activeFilter = null) {
+      const container = document.getElementById(containerId);
+      if (!container) return;
+      container.innerHTML = '';
+      
+      const tags = getAllTags();
+      tags.forEach(tag => {
+        const el = document.createElement('button');
+        el.className = `tag-pill text-xs px-3 py-1 rounded-full border text-zinc-600 dark:text-zinc-300 bg-white dark:bg-zinc-900 border-zinc-200 dark:border-zinc-800 hover:border-indigo-300 ${activeFilter === tag ? 'bg-indigo-100 border-indigo-300 text-indigo-700 dark:bg-indigo-900/40 dark:text-indigo-300' : ''}`;
+        el.textContent = tag;
+        
+        if (clickable) {
+          el.onclick = () => {
+            const search = document.getElementById('search-input');
+            if (search) search.value = '';
+            showView('posts');
+            setTimeout(() => filterPosts(tag), 30);
+          };
+        }
+        container.appendChild(el);
+      });
+    }
+
+    // Home recent grid
+    function renderHomeRecent() {
+      const grid = document.getElementById('home-recent-grid');
+      if (!grid) return;
+      grid.innerHTML = '';
+      
+      // Show the most recent 2 (excluding the featured college one if it's first)
+      const recent = [...POSTS].sort((a,b) => b.date.localeCompare(a.date)).slice(0, 2);
+      
+      recent.forEach(post => {
+        const card = document.createElement('div');
+        card.className = `post-card group cursor-pointer bg-white dark:bg-zinc-900 border subtle-border rounded-3xl p-6 flex flex-col modern-shadow hover:border-indigo-200 dark:hover:border-indigo-900`;
+        card.innerHTML = `
+          <div class="flex gap-2 mb-3">
+            ${post.tags.slice(0,2).map(t => `<span class="text-[10px] px-2.5 py-px rounded-full bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400">${t}</span>`).join('')}
+          </div>
+          <div class="font-semibold tracking-tight text-xl mb-2 line-clamp-2 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition">${post.title}</div>
+          <div class="text-sm text-zinc-600 dark:text-zinc-400 line-clamp-3 flex-1">${post.excerpt}</div>
+          <div class="flex items-center justify-between text-xs text-zinc-500 dark:text-zinc-400 pt-4 mt-auto">
+            <span>${formatDate(post.date)}</span>
+            <span>${post.readTime}</span>
+          </div>
+        `;
+        card.onclick = () => loadPost(post.slug);
+        grid.appendChild(card);
+      });
+    }
+
+    // Posts list + filter
+    let currentFilterTag = null;
+
+    function filterPosts(forceTag = null) {
+      const q = (document.getElementById('search-input')?.value || '').toLowerCase().trim();
+      if (forceTag !== null) {
+        currentFilterTag = (currentFilterTag === forceTag) ? null : forceTag;
+      }
+      
+      const grid = document.getElementById('posts-grid');
+      const noResults = document.getElementById('no-results');
+      grid.innerHTML = '';
+      
+      const filtered = POSTS.filter(p => {
+        const matchesSearch = !q || 
+          p.title.toLowerCase().includes(q) || 
+          p.excerpt.toLowerCase().includes(q);
+        const matchesTag = !currentFilterTag || p.tags.includes(currentFilterTag);
+        return matchesSearch && matchesTag;
+      }).sort((a,b) => b.date.localeCompare(a.date));
+
+      if (filtered.length === 0) {
+        noResults.classList.remove('hidden');
+        return;
+      } else {
+        noResults.classList.add('hidden');
+      }
+
+      filtered.forEach(post => {
+        const card = document.createElement('div');
+        card.className = `post-card group cursor-pointer bg-white dark:bg-zinc-900 border subtle-border rounded-3xl p-6 flex flex-col h-full modern-shadow`;
+        
+        const tagHtml = post.tags.map(t => 
+          `<span class="text-[10px] px-2 py-px rounded-full bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400">${t}</span>`
+        ).join('');
+
+        card.innerHTML = `
+          <div class="flex gap-1.5 mb-3 flex-wrap">${tagHtml}</div>
+          <div class="font-semibold text-xl tracking-tight leading-snug mb-3 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition line-clamp-3">${post.title}</div>
+          <div class="text-sm text-zinc-600 dark:text-zinc-400 line-clamp-3 flex-1">${post.excerpt}</div>
+          <div class="flex items-center justify-between mt-5 pt-4 border-t subtle-border text-xs text-zinc-500 dark:text-zinc-400">
+            <span>${formatDate(post.date)}</span>
+            <span class="font-medium">${post.readTime}</span>
+          </div>
+        `;
+        card.onclick = () => loadPost(post.slug);
+        grid.appendChild(card);
+      });
+      
+      // Re-render tag pills with active state
+      renderActiveTagFilters();
+    }
+
+    function renderActiveTagFilters() {
+      const container = document.getElementById('tag-filters');
+      if (!container) return;
+      container.innerHTML = '';
+      
+      const tags = getAllTags();
+      tags.forEach(tag => {
+        const btn = document.createElement('button');
+        const active = currentFilterTag === tag;
+        btn.className = `text-xs px-3 py-1.5 rounded-2xl border transition font-medium ${active ? 'bg-indigo-600 border-indigo-600 text-white' : 'bg-white dark:bg-zinc-900 subtle-border hover:border-indigo-300'}`;
+        btn.textContent = tag;
+        btn.onclick = () => {
+          const search = document.getElementById('search-input');
+          if (search) search.value = '';
+          filterPosts(tag);
+        };
+        container.appendChild(btn);
+      });
+      
+      // Clear button
+      if (currentFilterTag) {
+        const clear = document.createElement('button');
+        clear.className = 'text-xs px-3 py-1.5 text-zinc-400 hover:text-red-500';
+        clear.textContent = 'clear';
+        clear.onclick = () => {
+          currentFilterTag = null;
+          const search = document.getElementById('search-input');
+          if (search) search.value = '';
+          filterPosts();
+        };
+        container.appendChild(clear);
+      }
+    }
+
+    function filterPostsFromSidebar(tag) {
+      showView('posts');
+      setTimeout(() => {
+        const input = document.getElementById('search-input');
+        if (input) input.value = '';
+        filterPosts(tag);
+      }, 60);
+    }
+
+    // View switching
+    let lastView = 'home';
+
+    function showView(view) {
+      // Hide all
+      ['view-home', 'view-posts', 'view-about', 'view-reader'].forEach(id => {
+        const el = document.getElementById(id);
+        if (el) el.classList.add('hidden');
+      });
+
+      // Show target
+      const target = document.getElementById('view-' + view);
+      if (target) target.classList.remove('hidden');
+
+      // Sidebar active state
+      document.querySelectorAll('[data-nav]').forEach(btn => {
+        btn.classList.remove('nav-active');
+        if (btn.getAttribute('data-nav') === view) {
+          btn.classList.add('nav-active');
+        }
+      });
+
+      if (view === 'posts') {
+        // Reset filters when freshly opening posts
+        const input = document.getElementById('search-input');
+        if (input && lastView !== 'posts') {
+          input.value = '';
+          currentFilterTag = null;
+        }
+        renderPostsView();
+      }
+      
+      if (view === 'home') {
+        renderHomeRecent();
+      }
+      
+      lastView = view;
+      closeMobileDrawer();
+    }
+
+    function renderPostsView() {
+      renderActiveTagFilters();
+      const grid = document.getElementById('posts-grid');
+      if (grid) {
+        grid.innerHTML = '';  // force fresh render of all posts when tab is clicked
+        filterPosts();
+      }
+    }
+
+    // Reader
+    async function loadPost(slug) {
+      const postMeta = POSTS.find(p => p.slug === slug);
+      if (!postMeta) {
+        alert('Post not found');
+        return;
+      }
+
+      // Hide other views, show reader
+      ['view-home', 'view-posts', 'view-about'].forEach(id => {
+        const el = document.getElementById(id);
+        if (el) el.classList.add('hidden');
+      });
+      const reader = document.getElementById('view-reader');
+      reader.classList.remove('hidden');
+
+      // Meta
+      const meta = document.getElementById('reader-meta');
+      meta.innerHTML = `
+        <span class="font-medium">${formatDate(postMeta.date)}</span>
+        <span class="mx-1.5">·</span>
+        <span>${postMeta.readTime}</span>
+        <span class="mx-1.5">·</span>
+        <span class="text-indigo-500">${postMeta.tags.join(' / ')}</span>
+      `;
+
+      document.getElementById('reader-title').textContent = postMeta.title;
+
+      // Fetch and render markdown
+      const bodyEl = document.getElementById('reader-body');
+      bodyEl.innerHTML = `<div class="text-sm text-zinc-400 py-8">Loading post...</div>`;
+
+      try {
+        const res = await fetch(`posts/${slug}/post.md`);
+        if (!res.ok) throw new Error('Failed to load markdown');
+        let md = await res.text();
+        
+        // Strip frontmatter if present
+        md = md.replace(/^---[\s\S]*?---\s*/, '');
+        
+        const html = marked.parse(md);
+        bodyEl.innerHTML = html;
+        
+        // Minor enhancement: make headings have better spacing already handled by prose
+      } catch (err) {
+        bodyEl.innerHTML = `
+          <div class="p-6 rounded-2xl bg-red-50 dark:bg-red-900/10 text-red-600 text-sm">
+            Could not load the post content. Make sure you're running this locally or on GitHub Pages and that the markdown file exists.
+            <br><br>
+            <code>posts/${slug}.md</code>
+          </div>`;
+        console.error(err);
+      }
+
+      // Scroll to top of content area
+      window.scrollTo({ top: 120, behavior: 'smooth' });
+    }
+
+    function closeReader() {
+      const reader = document.getElementById('view-reader');
+      reader.classList.add('hidden');
+      
+      // Go back to posts view (most common flow)
+      showView('posts');
+    }
+
+    // Mobile drawer
+    function openMobileDrawer() {
+      document.getElementById('mobile-drawer').classList.remove('hidden');
+      document.getElementById('mobile-drawer').classList.add('flex');
+      renderTagPills('mobile-tags', true);
+    }
+
+    function closeMobileDrawer() {
+      const drawer = document.getElementById('mobile-drawer');
+      drawer.classList.add('hidden');
+      drawer.classList.remove('flex');
+    }
+
+    // Keyboard niceties
+    function initKeyboard() {
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          const reader = document.getElementById('view-reader');
+          if (!reader.classList.contains('hidden')) {
+            closeReader();
+          } else {
+            const drawer = document.getElementById('mobile-drawer');
+            if (!drawer.classList.contains('hidden')) closeMobileDrawer();
+          }
+        }
+        
+        if (e.key === '/' && document.activeElement.tagName === 'BODY') {
+          e.preventDefault();
+          const input = document.getElementById('search-input');
+          if (input) {
+            showView('posts');
+            setTimeout(() => input.focus(), 80);
+          }
+        }
+      });
+
+      // "/" hint on posts view
+      const search = document.getElementById('search-input');
+      if (search) {
+        search.placeholder = "Search titles and descriptions... (press / to focus)";
+      }
+    }
+
+    function initSidebarTags() {
+      const container = document.getElementById('sidebar-tags');
+      if (!container) return;
+      const tags = getAllTags();
+      tags.forEach(tag => {
+        const b = document.createElement('button');
+        b.className = 'tag-pill text-xs px-2.5 py-px rounded-full border text-zinc-600 dark:text-zinc-300 bg-white dark:bg-zinc-900 border-zinc-200 dark:border-zinc-800 hover:border-indigo-300';
+        b.textContent = tag;
+        b.onclick = () => filterPostsFromSidebar(tag);
+        container.appendChild(b);
+      });
+    }
+
+    function initYear() {
+      const y = document.getElementById('year');
+      if (y) y.textContent = new Date().getFullYear();
+    }
+
+    function initMobileMenu() {
+      const btn = document.getElementById('mobile-menu-btn');
+      if (btn) {
+        btn.addEventListener('click', openMobileDrawer);
+      }
+    }
+
+    function initNavActive() {
+      // Default home active
+      const homeBtn = document.querySelector('[data-nav="home"]');
+      if (homeBtn) homeBtn.classList.add('nav-active');
+    }
+
+    // Boot everything
+    function init() {
+      initTailwind();
+      initTheme();
+      initYear();
+      initSidebarTags();
+      initMobileMenu();
+      initKeyboard();
+      initNavActive();
+
+      // Initial renders
+      renderHomeRecent();
+      renderTagPills('sidebar-tags', true);
+
+      // Default view
+      showView('home');
+
+      // Seed search on posts if user clicks tags fast
+      const searchInput = document.getElementById('search-input');
+      if (searchInput) {
+        searchInput.addEventListener('input', () => filterPosts());
+      }
+
+      // Nice touch: pre-warm the posts grid in background
+      setTimeout(() => {
+        const postsGrid = document.getElementById('posts-grid');
+        if (postsGrid && postsGrid.children.length === 0) {
+          // silently prepare
+        }
+      }, 1200);
+
+      // Make sure first load is fast and clean
+      console.log('%c[blog] Amir Katzir\'s Blog initialized — fast, modern, sidebar ready.', 'color:#64748b');
+    }
+
+    // Start
+    window.addEventListener('DOMContentLoaded', init);
+  </script>
+</body>
+</html>
