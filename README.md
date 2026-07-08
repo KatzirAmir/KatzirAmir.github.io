@@ -1,58 +1,59 @@
-# Amir Katzir's Blog
+# Amir Katzir — Blog & College Path
 
-Modern, fast, left-sidebar personal blog. Hosted on GitHub Pages at https://katziramir.github.io
+- **Blog** — personal writing  
+- **College Path** — Bay Area / UC advising at **$40 per 45-minute session**
 
-## Tech
+Contact: **amir.katzir.email@gmail.com**  
+Live: https://katziramir.github.io
 
-- Single `index.html` (Tailwind via CDN + Tailwind config + marked.js for Markdown)
-- Pure client-side SPA-like navigation (no reloads between Home / Posts / About)
-- Posts are plain Markdown files in `/posts/` (now organized as subfolders: posts/slug/post.md for easy editing)
-- Left sidebar is fixed and beautiful on desktop; collapses to a clean mobile drawer
-- Dark/light theme with persistence (improved with additional CSS rules for full bg/text/border switching)
-- Zero build step. Sub-second loads on GitHub Pages CDN.
-
-## Adding Posts (new subfolder structure)
-
-1. Create folder `posts/your-slug/` (e.g. `posts/credit-cards/`)
-2. Create `posts/your-slug/post.md` inside it. Use the frontmatter + Markdown format (copy from `posts/template.md` as starting point if helpful).
-3. Add matching entry to the `POSTS` constant in `index.html` (slug must match the folder name).
-4. Commit/push the changes (or ask me to push the updates to the live site via tools).
-
-The site will pick up the new post automatically (fetches `posts/slug/post.md`).
-
-## Local development
-
-From inside the `blog/` folder:
+## Quick start (local)
 
 ```powershell
-# PowerShell / CMD
+cd "$env:USERPROFILE\Documents\Grok\blog"
 python -m http.server 8000
-# or
-npx serve
 ```
 
-Then open http://localhost:8000
+Open http://localhost:8000  
+(Use a local server — `file://` will not load Markdown guides/posts.)
 
-## Deployment (GitHub Pages)
+## Site map
 
-This repo is published as **katziramir.github.io**.
+| View | Content |
+|------|---------|
+| Home | Landing |
+| College Path | Positioning |
+| Services | $40 / 45 min |
+| Guides | Deep Markdown guides in `/guides` |
+| Blog | Posts in `/posts/<slug>/post.md` |
+| About | Bio |
+| Contact | Google Form intake + Calendly |
 
-After pushing changes:
+## Config (in `index.html`)
 
-1. Go to the repo: https://github.com/KatzirAmir/KatzirAmir.github.io
-2. Settings → Pages
-3. Under "Build and deployment":
-   - Source: **Deploy from a branch**
-   - Branch: `main`
-   - Folder: `/ (root)`
-4. Save. Wait ~30–90 seconds. Your site is live at https://katziramir.github.io
+```js
+const CONTACT_EMAIL = 'amir.katzir.email@gmail.com';
+const CALENDLY_URL = 'https://calendly.com/amir-katzir-email/30min'; // 45-min session
+const GOOGLE_FORM_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSfz5crCMJiG4oHEZLbnzl8clBfOPikkrQ_5DbyNY6DR_mUbKA/viewform';
+```
 
-The `blog site/` folder contains the Notion-sourced material (guides, plans, prompts) that was used for the college post.
+- **Book:** https://calendly.com/amir-katzir-email/30min  
+- **Intake form:** https://docs.google.com/forms/d/e/1FAIpQLSfz5crCMJiG4oHEZLbnzl8clBfOPikkrQ_5DbyNY6DR_mUbKA/viewform
 
-## Philosophy
+## Guides included
 
-Fast. Smooth. Sleek. No heavy static site generators unless we decide we want Quarto-powered technical posts later (content is portable Markdown either way).
+- Freshman (first-year) UC admission  
+- Transfer admission  
+- IGETC  
+- Dual enrollment  
+- UC cost (2026–27 figures from UC)  
+- TAG  
+- Services  
 
-Enjoy.
+## Adding a blog post
 
-— Amir
+1. `posts/your-slug/post.md`  
+2. Add entry to `POSTS` in `index.html`  
+
+## Deploy
+
+GitHub Pages: `katziramir.github.io` → branch `main` → `/ (root)`
