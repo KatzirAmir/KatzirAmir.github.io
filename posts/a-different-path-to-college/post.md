@@ -28,11 +28,11 @@ I used **assist.org** constantly to map courses, understand major preparation, a
 
 Right after junior year I did the TAG sprint at Foothill College: Principles of Macroeconomics (Econ 1A), Principles of Microeconomics (Econ 1B), and Calculus 1A (Math 1A) — 15 units total, strong grades, and Dean's List.
 
-That summer + everything before it got me TAG-eligible. I also leaned heavily on **Ask Ms. Sun (mssun / askmssun.com)** guides — some of the most practical, no-BS resources for UC transfer strategy out there.
+That summer + everything before it got me TAG-eligible. I also dug deep into official UC transfer rules, campus major-prep maps on assist.org, and public admit-rate data so the plan was numbers-driven instead of guesswork.
 
 Although my real interests were in Statistics / data / math (Financial Mathematics and Statistics at UCSB was the dream program), I applied to **Economics** at the UCs, including UC Berkeley. It was close enough academically and strategically smarter for admission in some cases. I finished all lower-division requirements early (by end of the fall quarter prior to transfer). You can always switch or add majors later in many cases — getting in the door is the hard part.
 
-I applied broadly but used the official UC transfer-by-major data and mssun insights to guide choices.
+I applied broadly but used the official UC transfer-by-major data and assist.org mappings to guide choices.
 
 ## Outcome and the "From College" Side
 
@@ -46,8 +46,8 @@ I completed IGETC (using Foothill courses + AP credits + even high school Hebrew
 
 - **assist.org** — the single most important tool for articulation, IGETC lists, and major prep planning.
 - **UC TAG (Transfer Admission Guarantee)** — especially for UCSB, with the 30-unit / English + Math readiness rules.
-- **mssun (Ask Ms. Sun)** — honest, tactical guides on what actually moves the needle for transfers.
 - Official UC tools: TAP for TAG, the Transfer Academic Update (TAU), and the public transfer-by-major admit rate data.
+- Term-by-term planning (the Amir College Plan spreadsheet) so every unit had a job.
 - Foothill counseling + PAUSD off-campus course policies (the Econ approval fight was real — persistence and a clear "or I won't graduate on time" case helped).
 - Direct records: petitions, transcripts, AP score reports, counselor notes.
 
@@ -75,8 +75,8 @@ Thanks for reading.
 
 - [assist.org](https://assist.org/)
 - [UC Transfer Admission Guarantee](https://admission.universityofcalifornia.edu/admission-requirements/transfer-requirements/uc-transfer-programs/transfer-admission-guarantee-tag.html)
-- [Ask Ms. Sun / mssun](https://askmssun.com/)
-- UC transfers by major data center
+- [UC Admissions](https://admission.universityofcalifornia.edu/)
+- UC transfers by major data (campus institutional research / admissions sites)
 - Your local community college dual enrollment / counseling office + high school off-campus policy docs
 
 (Details drawn from my actual transcripts, the Amir College Plan spreadsheet, petitions, and public resources as of 2026. Always double-check current requirements and articulation on official sites.)
