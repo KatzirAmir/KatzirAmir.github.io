@@ -143,7 +143,7 @@ Veterans, UC-to-UC, and other special cases have extra rules — use campus tran
 
 ---
 
-## 9. Session work ($40 / 45 min)
+## 9. Session work ($40 / 30 min)
 
 - Transcript vs assist.org gap analysis  
 - TAG vs non-TAG campus mix  

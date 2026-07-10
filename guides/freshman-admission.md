@@ -204,7 +204,7 @@ Short answers. Best ones: **one concrete story + reflection + evidence**. Worst 
 
 ---
 
-## 10. What a $40 / 45-min session is for
+## 10. What a $40 / 30-min session is for
 
 - Transcript + A-G gap audit  
 - Next-term dual enrollment vs AP decisions  

@@ -98,7 +98,7 @@ In sessions we don’t replace a financial aid officer. We do:
 - Align major/campus choices with likely time-to-degree  
 - Point you to official calculators and deadlines  
 
-**$40 / 45 minutes** — bring any aid estimates you already have.
+**$40 / 30 minutes** — bring any aid estimates you already have.
 
 ---
 

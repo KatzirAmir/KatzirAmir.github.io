@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>Amir Katzir — Blog &amp; College Path</title>
-  <meta name="description" content="Amir Katzir — personal blog and College Path advising for Bay Area students. UC freshman &amp; transfer strategy, dual enrollment, TAG, IGETC. $40 per 45-minute session.">
+  <title>Amir Katzir — Blog &amp; College Consulting</title>
+  <meta name="description" content="Amir Katzir's blog, and College Consulting for Bay Area high school students. UC strategy, dual enrollment, TAG. $40 per 30-minute session.">
   <meta name="theme-color" content="#0f172a">
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🎓%3C/text%3E%3C/svg%3E">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E📝%3C/text%3E%3C/svg%3E">
   <script>
     tailwind.config = {
       darkMode: 'class',
@@ -77,7 +77,7 @@
       color: #fff;
       font-weight: 600;
       box-shadow: 0 1px 0 rgba(255,255,255,0.2) inset, 0 8px 20px -8px rgba(2,132,199,0.7);
-      transition: filter 0.15s ease, transform 0.15s ease;
+      transition: filter 0.15s ease;
     }
     .btn-primary:hover { filter: brightness(1.05); }
     .btn-secondary {
@@ -88,15 +88,6 @@
       transition: border-color 0.15s ease, background 0.15s ease;
     }
     .btn-secondary:hover { border-color: rgba(2,132,199,0.45); background: rgba(14,165,233,0.08); }
-    .pill {
-      display: inline-flex; align-items: center; gap: 0.4rem;
-      border-radius: 9999px; border: 1px solid var(--line); background: var(--card);
-      font-size: 0.75rem; font-weight: 500; color: var(--muted); padding: 0.35rem 0.75rem;
-    }
-    .pill-dot {
-      width: 0.4rem; height: 0.4rem; border-radius: 9999px; background: #10b981;
-      box-shadow: 0 0 0 3px rgba(16,185,129,0.18);
-    }
     .section-label {
       font-size: 0.7rem; letter-spacing: 0.14em; text-transform: uppercase;
       font-weight: 600; color: #0284c7;
@@ -109,18 +100,6 @@
     .input-field:focus {
       outline: none; border-color: #38bdf8;
       box-shadow: 0 0 0 3px rgba(14,165,233,0.18);
-    }
-    .hero-grid {
-      background-image:
-        linear-gradient(to right, rgba(148,163,184,0.12) 1px, transparent 1px),
-        linear-gradient(to bottom, rgba(148,163,184,0.12) 1px, transparent 1px);
-      background-size: 48px 48px;
-      mask-image: radial-gradient(ellipse 70% 60% at 50% 0%, black 20%, transparent 75%);
-    }
-    .dark .hero-grid {
-      background-image:
-        linear-gradient(to right, rgba(51,65,85,0.45) 1px, transparent 1px),
-        linear-gradient(to bottom, rgba(51,65,85,0.45) 1px, transparent 1px);
     }
     .prose-custom { line-height: 1.8; font-size: 1.02rem; color: #334155; word-wrap: break-word; }
     .dark .prose-custom { color: #cbd5e1; }
@@ -166,7 +145,7 @@
     @media (max-width: 640px) {
       .calendly-frame { min-height: 920px; }
     }
-    /* Prevent iOS tap highlight mess */
+    .resume-rule { border-color: var(--line); }
     button, a { -webkit-tap-highlight-color: transparent; }
   </style>
 </head>
@@ -177,29 +156,23 @@
         <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-slate-900 dark:bg-sky-500 text-white flex items-center justify-center text-xs sm:text-sm font-bold shrink-0">AK</div>
         <div class="text-left leading-tight min-w-0">
           <div class="font-semibold tracking-tight text-sm sm:text-base text-slate-900 dark:text-slate-50 truncate">Amir Katzir</div>
-          <div class="text-[9px] sm:text-[10px] uppercase tracking-[0.14em] text-slate-500 font-medium">Blog · College Path</div>
+          <div class="text-[9px] sm:text-[10px] uppercase tracking-[0.14em] text-slate-500 font-medium">Blog</div>
         </div>
       </button>
 
-      <nav class="hidden lg:flex items-center gap-0.5 text-sm">
-        <button type="button" onclick="showView('home')" data-nav="home" class="nav-link px-2.5 py-2 rounded-lg">Home</button>
-        <button type="button" onclick="showView('path')" data-nav="path" class="nav-link px-2.5 py-2 rounded-lg">College Path</button>
-        <button type="button" onclick="showView('services')" data-nav="services" class="nav-link px-2.5 py-2 rounded-lg">Services</button>
-        <button type="button" onclick="showView('resources')" data-nav="resources" class="nav-link px-2.5 py-2 rounded-lg">Guides</button>
-        <button type="button" onclick="showView('posts')" data-nav="posts" class="nav-link px-2.5 py-2 rounded-lg">Blog</button>
-        <button type="button" onclick="showView('about')" data-nav="about" class="nav-link px-2.5 py-2 rounded-lg">About</button>
+      <nav class="hidden md:flex items-center gap-0.5 text-sm">
+        <button type="button" onclick="showView('home')" data-nav="home" class="nav-link px-3 py-2 rounded-lg">Home</button>
+        <button type="button" onclick="showView('consulting')" data-nav="consulting" class="nav-link px-3 py-2 rounded-lg">College Consulting</button>
+        <button type="button" onclick="showView('about')" data-nav="about" class="nav-link px-3 py-2 rounded-lg">About</button>
       </nav>
 
       <div class="flex items-center gap-1.5 sm:gap-2 shrink-0">
         <button type="button" onclick="toggleTheme()" class="inline-flex items-center justify-center w-9 h-9 rounded-xl border border-slate-200 dark:border-slate-700 text-slate-500" aria-label="Toggle theme">
           <span id="theme-icon">🌙</span>
         </button>
-        <button type="button" onclick="showView('contact')" class="hidden sm:inline-flex btn-primary text-sm px-3.5 py-2 rounded-xl whitespace-nowrap">
-          Book · $40
-        </button>
-        <button type="button" id="mobile-menu-btn" class="lg:hidden inline-flex items-center gap-1.5 px-2.5 py-2 rounded-xl border border-slate-200 dark:border-slate-700 text-sm font-medium">
+        <button type="button" id="mobile-menu-btn" class="md:hidden inline-flex items-center gap-1.5 px-2.5 py-2 rounded-xl border border-slate-200 dark:border-slate-700 text-sm font-medium">
           <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
-          <span class="hidden xs:inline">Menu</span>
+          Menu
         </button>
       </div>
     </div>
@@ -208,190 +181,30 @@
   <main>
     <div class="max-w-6xl mx-auto px-4 sm:px-6 pt-6 sm:pt-10 pb-16 sm:pb-20">
 
-      <!-- HOME -->
+      <!-- ===================== HOME = BLOG ===================== -->
       <section id="view-home" class="fade-in">
-        <div class="relative overflow-hidden rounded-2xl sm:rounded-3xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-soft">
-          <div class="absolute inset-0 hero-grid pointer-events-none"></div>
-          <div class="relative px-5 sm:px-10 lg:px-14 py-10 sm:py-16">
-            <div class="pill mb-5">
-              <span class="pill-dot"></span>
-              Bay Area · UC focus · $40 / 45 min
-            </div>
-            <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl leading-[1.08] tracking-tight text-slate-900 dark:text-white max-w-3xl">
-              Clear plans for college — without the noise.
-            </h1>
-            <p class="mt-5 text-base sm:text-lg text-slate-600 dark:text-slate-300 max-w-2xl leading-relaxed">
-              Personal blog + <strong class="font-semibold text-slate-800 dark:text-slate-100">College Path</strong> advising for Bay Area high school families:
-              dual enrollment, TAG, IGETC, major strategy, and doable course plans aimed at the University of California.
-            </p>
-            <div class="mt-7 flex flex-col sm:flex-row flex-wrap gap-3">
-              <button type="button" onclick="showView('contact')" class="btn-primary px-5 py-3 rounded-xl text-sm sm:text-base">Book a session · $40</button>
-              <button type="button" onclick="showView('resources')" class="btn-secondary px-5 py-3 rounded-xl text-sm sm:text-base">Read free guides</button>
-              <button type="button" onclick="showView('posts')" class="btn-secondary px-5 py-3 rounded-xl text-sm sm:text-base">Blog</button>
-            </div>
-            <div class="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-3 max-w-3xl">
-              <div class="rounded-2xl bg-slate-50/90 dark:bg-slate-950/60 border border-slate-200/80 dark:border-slate-800 p-4">
-                <div class="text-xs font-semibold uppercase tracking-wider text-sky-700 dark:text-sky-400 mb-1">Path</div>
-                <div class="text-sm text-slate-700 dark:text-slate-300">Gunn → Foothill TAG → UC Berkeley</div>
-              </div>
-              <div class="rounded-2xl bg-slate-50/90 dark:bg-slate-950/60 border border-slate-200/80 dark:border-slate-800 p-4">
-                <div class="text-xs font-semibold uppercase tracking-wider text-sky-700 dark:text-sky-400 mb-1">Rate</div>
-                <div class="text-sm text-slate-700 dark:text-slate-300">$40 per 45-minute session</div>
-              </div>
-              <div class="rounded-2xl bg-slate-50/90 dark:bg-slate-950/60 border border-slate-200/80 dark:border-slate-800 p-4">
-                <div class="text-xs font-semibold uppercase tracking-wider text-sky-700 dark:text-sky-400 mb-1">Focus</div>
-                <div class="text-sm text-slate-700 dark:text-slate-300">UC · dual enrollment · transfer</div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="mt-8 grid md:grid-cols-2 gap-4 sm:gap-5">
-          <button type="button" onclick="showView('path')" class="card card-hover rounded-2xl sm:rounded-3xl p-6 sm:p-8 text-left group">
-            <div class="section-label mb-2">Advising</div>
-            <h2 class="font-display text-2xl sm:text-3xl mb-2 group-hover:text-sky-700 dark:group-hover:text-sky-300 transition">College Path</h2>
-            <p class="text-slate-600 dark:text-slate-400 text-sm sm:text-base leading-relaxed mb-4">
-              Optimize the next terms: courses, majors, TAG, and application positioning — built for busy Bay Area households.
-            </p>
-            <span class="text-sm font-semibold text-sky-700 dark:text-sky-400">How it works →</span>
-          </button>
-          <button type="button" onclick="showView('resources')" class="card card-hover rounded-2xl sm:rounded-3xl p-6 sm:p-8 text-left group">
-            <div class="section-label mb-2">Free</div>
-            <h2 class="font-display text-2xl sm:text-3xl mb-2 group-hover:text-sky-700 dark:group-hover:text-sky-300 transition">Deep guides</h2>
-            <p class="text-slate-600 dark:text-slate-400 text-sm sm:text-base leading-relaxed mb-4">
-              Freshman admission, transfer, IGETC, dual enrollment, UC cost, TAG, and what sessions cover.
-            </p>
-            <span class="text-sm font-semibold text-sky-700 dark:text-sky-400">Browse guides →</span>
-          </button>
-        </div>
-
-        <div class="mt-12">
-          <div class="flex items-end justify-between gap-3 mb-4">
-            <div>
-              <div class="section-label mb-1">From the blog</div>
-              <h2 class="font-display text-2xl sm:text-3xl">Featured</h2>
-            </div>
-            <button type="button" onclick="showView('posts')" class="text-sm font-medium text-sky-700 dark:text-sky-400 hover:underline shrink-0">All posts →</button>
-          </div>
-          <div onclick="loadPost('a-different-path-to-college')" class="card card-hover rounded-2xl sm:rounded-3xl p-6 sm:p-8 cursor-pointer group">
-            <div class="flex flex-wrap gap-2 mb-3">
-              <span class="text-xs px-2.5 py-1 rounded-full bg-sky-50 text-sky-800 dark:bg-sky-950 dark:text-sky-300 font-medium border border-sky-100 dark:border-sky-900">college</span>
-              <span class="text-xs px-2.5 py-1 rounded-full bg-slate-100 text-slate-600 dark:bg-slate-800 dark:text-slate-300 font-medium">berkeley</span>
-            </div>
-            <h3 class="text-xl sm:text-2xl font-semibold tracking-tight mb-2 group-hover:text-sky-700 dark:group-hover:text-sky-300 transition">A Different Path to College</h3>
-            <p class="text-slate-600 dark:text-slate-400 text-sm sm:text-base leading-relaxed mb-4">
-              Early graduation from Gunn, Foothill TAG sprint, strategic applications, UC Berkeley.
-            </p>
-            <div class="text-sm text-slate-500">June 14, 2026 · 7 min read</div>
-          </div>
-          <div id="home-recent-grid" class="grid md:grid-cols-2 gap-4 sm:gap-5 mt-4"></div>
-        </div>
-      </section>
-
-      <!-- COLLEGE PATH -->
-      <section id="view-path" class="hidden fade-in">
-        <div class="max-w-3xl">
-          <div class="section-label mb-3">College Path</div>
-          <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl tracking-tight leading-[1.05]">Bay Area students. UC-focused plans.</h1>
-          <p class="mt-4 sm:mt-5 text-base sm:text-lg text-slate-600 dark:text-slate-400 leading-relaxed">
-            I help high school (and transfer-bound) students optimize dual enrollment, AP load, major choice, TAG, and application strategy —
-            with an emphasis on paths that are competitive <em>and</em> executable.
+        <div class="max-w-2xl mb-8 sm:mb-10">
+          <h1 class="font-display text-4xl sm:text-5xl tracking-tight text-slate-900 dark:text-white">Writing</h1>
+          <p class="mt-3 text-base sm:text-lg text-slate-600 dark:text-slate-400">
+            Notes on college, career, and systems. Search and filter below.
           </p>
         </div>
-        <div class="mt-8 grid sm:grid-cols-3 gap-4">
-          <div class="card rounded-2xl p-5 sm:p-6">
-            <div class="text-sky-700 dark:text-sky-400 font-semibold text-sm mb-2">01 · Diagnose</div>
-            <p class="text-sm text-slate-600 dark:text-slate-400">Transcript, goals, bottlenecks, what’s actually binding for UC.</p>
-          </div>
-          <div class="card rounded-2xl p-5 sm:p-6">
-            <div class="text-sky-700 dark:text-sky-400 font-semibold text-sm mb-2">02 · Design</div>
-            <p class="text-sm text-slate-600 dark:text-slate-400">Term-by-term courses, dual enrollment, major/campus mix, TAG option.</p>
-          </div>
-          <div class="card rounded-2xl p-5 sm:p-6">
-            <div class="text-sky-700 dark:text-sky-400 font-semibold text-sm mb-2">03 · Execute</div>
-            <p class="text-sm text-slate-600 dark:text-slate-400">Session-by-session adjustments; application-season positioning.</p>
-          </div>
-        </div>
-        <div class="mt-8 card rounded-2xl sm:rounded-3xl p-6 sm:p-8 flex flex-col sm:flex-row gap-6 items-start sm:items-center justify-between">
-          <div>
-            <div class="text-3xl font-semibold tracking-tight">$40 <span class="text-base font-medium text-slate-500">/ 45 minutes</span></div>
-            <p class="text-sm text-slate-500 mt-1">Simple pricing. Book only what you need.</p>
-          </div>
-          <button type="button" onclick="showView('contact')" class="btn-primary px-6 py-3 rounded-xl text-sm w-full sm:w-auto">Book a session</button>
-        </div>
-        <p class="mt-6 text-sm text-slate-500 leading-relaxed max-w-3xl">
-          Educational consulting only — no admission guarantees. Always verify requirements on official UC, high school, and community college sources.
-          Sessions focus on <strong>your</strong> plan: dual enrollment, major strategy, TAG, and Bay Area logistics.
-        </p>
-      </section>
 
-      <!-- SERVICES -->
-      <section id="view-services" class="hidden fade-in">
-        <div class="max-w-3xl mb-8">
-          <div class="section-label mb-3">Services</div>
-          <h1 class="font-display text-4xl sm:text-5xl tracking-tight">One clear offering</h1>
-          <p class="mt-4 text-base sm:text-lg text-slate-600 dark:text-slate-400">No package maze. Pay per session.</p>
-        </div>
-
-        <div class="card rounded-2xl sm:rounded-3xl p-6 sm:p-10 max-w-xl border-sky-200 dark:border-sky-900 shadow-lift">
-          <div class="text-xs font-semibold uppercase tracking-wider text-sky-700 dark:text-sky-400 mb-2">Session</div>
-          <h2 class="text-2xl sm:text-3xl font-semibold tracking-tight mb-2">College Path advising</h2>
-          <div class="text-4xl font-semibold tracking-tight my-4">$40<span class="text-lg font-medium text-slate-500"> / 45 min</span></div>
-          <ul class="space-y-2.5 text-sm text-slate-600 dark:text-slate-400 mb-8">
-            <li class="flex gap-2"><span class="text-sky-600 shrink-0">✓</span> Live 45-minute call (Google Meet via Calendly)</li>
-            <li class="flex gap-2"><span class="text-sky-600 shrink-0">✓</span> Major &amp; campus strategy</li>
-            <li class="flex gap-2"><span class="text-sky-600 shrink-0">✓</span> Dual enrollment + AP course planning (doable loads)</li>
-            <li class="flex gap-2"><span class="text-sky-600 shrink-0">✓</span> IGETC / TAG / transfer mapping when relevant</li>
-            <li class="flex gap-2"><span class="text-sky-600 shrink-0">✓</span> PIQ topic guidance (not ghostwriting)</li>
-            <li class="flex gap-2"><span class="text-sky-600 shrink-0">✓</span> Parent-friendly action list from the call</li>
-          </ul>
-          <div class="flex flex-col sm:flex-row gap-3">
-            <button type="button" onclick="showView('contact')" class="btn-primary px-5 py-3 rounded-xl text-sm">Book + intake form</button>
-            <button type="button" onclick="loadGuide('services')" class="btn-secondary px-5 py-3 rounded-xl text-sm">Full service guide</button>
+        <!-- Featured -->
+        <div onclick="loadPost('a-different-path-to-college')"
+             class="card card-hover rounded-2xl sm:rounded-3xl p-6 sm:p-8 cursor-pointer group mb-6">
+          <div class="section-label mb-2">Featured</div>
+          <div class="flex flex-wrap gap-2 mb-3">
+            <span class="text-xs px-2.5 py-1 rounded-full bg-sky-50 text-sky-800 dark:bg-sky-950 dark:text-sky-300 font-medium border border-sky-100 dark:border-sky-900">college</span>
+            <span class="text-xs px-2.5 py-1 rounded-full bg-slate-100 text-slate-600 dark:bg-slate-800 dark:text-slate-300 font-medium">berkeley</span>
           </div>
-        </div>
-
-        <div class="mt-8 grid sm:grid-cols-2 gap-4">
-          <div class="card rounded-2xl p-5">
-            <h3 class="font-semibold mb-2">Common session topics</h3>
-            <p class="text-sm text-slate-600 dark:text-slate-400">School list, prerequisites, early graduation, Foothill-style summers, Econ vs Stats-style major choices, TAG insurance campus.</p>
-          </div>
-          <div class="card rounded-2xl p-5">
-            <h3 class="font-semibold mb-2">How booking works</h3>
-            <p class="text-sm text-slate-600 dark:text-slate-400">1) Submit intake form → 2) Pick a Calendly slot → 3) Meet. Payment: $40 (see Contact for current method).</p>
-          </div>
-        </div>
-      </section>
-
-      <!-- RESOURCES / GUIDES -->
-      <section id="view-resources" class="hidden fade-in">
-        <div class="max-w-3xl mb-8">
-          <div class="section-label mb-3">Guides</div>
-          <h1 class="font-display text-4xl sm:text-5xl tracking-tight">Deep guides</h1>
-          <p class="mt-4 text-base sm:text-lg text-slate-600 dark:text-slate-400 leading-relaxed">
-            Practical UC-focused explainers for Bay Area students: first-year and transfer paths, IGETC, dual enrollment, cost, TAG, and how sessions work.
+          <h2 class="text-xl sm:text-2xl font-semibold tracking-tight mb-2 group-hover:text-sky-700 dark:group-hover:text-sky-300 transition">A Different Path to College</h2>
+          <p class="text-slate-600 dark:text-slate-400 text-sm sm:text-base leading-relaxed mb-3">
+            Early graduation from Gunn, Foothill TAG sprint, strategic applications, UC Berkeley.
           </p>
+          <div class="text-sm text-slate-500">June 14, 2026 · 7 min read</div>
         </div>
-        <div id="guides-grid" class="grid sm:grid-cols-2 gap-4"></div>
-        <div class="mt-8 card rounded-2xl p-6">
-          <h3 class="font-semibold mb-3">Official tools</h3>
-          <ul class="grid sm:grid-cols-2 gap-2 text-sm">
-            <li><a class="text-sky-700 dark:text-sky-400 hover:underline" href="https://assist.org/" target="_blank" rel="noopener">assist.org</a></li>
-            <li><a class="text-sky-700 dark:text-sky-400 hover:underline" href="https://admission.universityofcalifornia.edu/" target="_blank" rel="noopener">UC Admissions</a></li>
-            <li><a class="text-sky-700 dark:text-sky-400 hover:underline" href="https://hs-articulation.ucop.edu/agcourselist" target="_blank" rel="noopener">UC A-G Course List</a></li>
-            <li><a class="text-sky-700 dark:text-sky-400 hover:underline" href="https://uctap.universityofcalifornia.edu/students/" target="_blank" rel="noopener">UC TAP (TAG)</a></li>
-            <li><a class="text-sky-700 dark:text-sky-400 hover:underline" href="https://cvc.edu/" target="_blank" rel="noopener">California Virtual Campus</a></li>
-            <li><a class="text-sky-700 dark:text-sky-400 hover:underline" href="https://admission.universityofcalifornia.edu/tuition-financial-aid/tuition-cost-of-attendance/" target="_blank" rel="noopener">UC cost of attendance</a></li>
-          </ul>
-        </div>
-      </section>
 
-      <!-- BLOG -->
-      <section id="view-posts" class="hidden fade-in">
-        <div class="mb-6 max-w-2xl">
-          <div class="section-label mb-3">Blog</div>
-          <h1 class="font-display text-4xl sm:text-5xl tracking-tight">Writing</h1>
-        </div>
         <div class="sticky top-14 sm:top-16 z-30 py-3 mb-4 bg-[var(--surface)]/95 backdrop-blur border-b border-slate-200/80 dark:border-slate-800">
           <div class="flex flex-col sm:flex-row gap-3">
             <input id="search-input" type="search" placeholder="Search posts…" oninput="filterPosts()"
@@ -399,89 +212,247 @@
             <div id="tag-filters" class="flex flex-wrap gap-2 items-center"></div>
           </div>
         </div>
+
         <div id="posts-grid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4"></div>
         <div id="no-results" class="hidden mt-8 text-center text-sm text-slate-500">No posts match.</div>
       </section>
 
-      <!-- ABOUT -->
-      <section id="view-about" class="hidden fade-in max-w-3xl">
-        <div class="section-label mb-3">About</div>
-        <h1 class="font-display text-4xl sm:text-5xl tracking-tight mb-6">Amir Katzir</h1>
-        <div class="card rounded-2xl sm:rounded-3xl p-6 sm:p-8 mb-6 flex flex-col sm:flex-row gap-5 items-start">
-          <img src="https://avatars.githubusercontent.com/u/144059552?v=4" alt="Amir Katzir"
-               class="w-20 h-20 sm:w-24 sm:h-24 rounded-2xl object-cover ring-1 ring-slate-200 dark:ring-slate-700 shrink-0" width="96" height="96">
-          <div>
-            <p class="text-base sm:text-lg text-slate-700 dark:text-slate-300 leading-relaxed">
-              Actuarial Analyst @ Next Insurance. UC Berkeley Statistics (via Economics).
-              Gunn High School (early diploma), Foothill College (AS-T Mathematics, High Honors), dual enrollment + TAG path.
+      <!-- ===================== COLLEGE CONSULTING ===================== -->
+      <section id="view-consulting" class="hidden fade-in">
+        <div class="relative overflow-hidden rounded-2xl sm:rounded-3xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-soft mb-10">
+          <div class="relative px-5 sm:px-10 lg:px-12 py-10 sm:py-14">
+            <div class="section-label mb-3">College Consulting</div>
+            <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl tracking-tight leading-[1.05] text-slate-900 dark:text-white max-w-2xl">
+              Bay Area high school → clear UC path.
+            </h1>
+            <p class="mt-4 text-base sm:text-lg text-slate-600 dark:text-slate-400 max-w-2xl leading-relaxed">
+              Dual enrollment, major strategy, TAG/transfer, and course plans that stay doable.
+              One rate: <strong class="text-slate-800 dark:text-slate-200">$40 for 30 minutes</strong>.
             </p>
-            <div class="mt-3 flex flex-wrap gap-3 text-sm">
-              <a href="https://www.linkedin.com/in/amir-katzir" target="_blank" rel="noopener" class="text-sky-700 dark:text-sky-400 font-medium hover:underline">LinkedIn ↗</a>
-              <a href="https://github.com/KatzirAmir" target="_blank" rel="noopener" class="text-sky-700 dark:text-sky-400 font-medium hover:underline">GitHub ↗</a>
+            <div class="mt-7">
+              <a href="#book" onclick="scrollToBook(event)" class="btn-primary inline-flex px-7 py-3.5 rounded-xl text-base">
+                Book a meeting
+              </a>
+            </div>
+            <div class="mt-8 flex flex-wrap gap-3 text-sm text-slate-500">
+              <span class="px-3 py-1.5 rounded-full border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-950">Gunn → Foothill → Berkeley</span>
+              <span class="px-3 py-1.5 rounded-full border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-950">UC-focused</span>
+              <span class="px-3 py-1.5 rounded-full border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-950">$40 · 30 min</span>
             </div>
           </div>
         </div>
-        <p class="text-slate-600 dark:text-slate-400 leading-relaxed mb-6">
-          College Path is hands-on planning for families who want systems and tradeoffs — not generic pep talks.
-          I reverse-engineered a non-traditional route to Berkeley (dual enrollment, TAG, major strategy) and pass on that operational approach in sessions.
-        </p>
-        <button type="button" onclick="showView('contact')" class="btn-primary px-5 py-3 rounded-xl text-sm">Book a session · $40</button>
-      </section>
 
-      <!-- CONTACT: Google Form (Drive) + Calendly only -->
-      <section id="view-contact" class="hidden fade-in">
-        <div class="max-w-3xl mb-8">
-          <div class="section-label mb-3">Contact</div>
-          <h1 class="font-display text-4xl sm:text-5xl tracking-tight">Book a session</h1>
-          <p class="mt-4 text-base sm:text-lg text-slate-600 dark:text-slate-400 leading-relaxed">
-            <strong class="text-slate-800 dark:text-slate-200">$40 · 45 minutes.</strong>
-            Two steps: submit the intake form (responses land in Google Drive), then pick a time.
-            Questions:
-            <a class="text-sky-700 dark:text-sky-400 underline" href="mailto:amir.katzir.email@gmail.com">amir.katzir.email@gmail.com</a>
-          </p>
+        <div class="grid sm:grid-cols-3 gap-4 mb-12">
+          <div class="card rounded-2xl p-5">
+            <div class="text-sky-700 dark:text-sky-400 font-semibold text-sm mb-2">01 · Diagnose</div>
+            <p class="text-sm text-slate-600 dark:text-slate-400">Transcript, goals, bottlenecks — what actually binds for UC.</p>
+          </div>
+          <div class="card rounded-2xl p-5">
+            <div class="text-sky-700 dark:text-sky-400 font-semibold text-sm mb-2">02 · Design</div>
+            <p class="text-sm text-slate-600 dark:text-slate-400">Term-by-term courses, dual enrollment, major/campus mix, TAG.</p>
+          </div>
+          <div class="card rounded-2xl p-5">
+            <div class="text-sky-700 dark:text-sky-400 font-semibold text-sm mb-2">03 · Execute</div>
+            <p class="text-sm text-slate-600 dark:text-slate-400">Next steps you can run this week — without burning out.</p>
+          </div>
         </div>
 
-        <ol class="space-y-8 max-w-4xl">
-          <li class="card rounded-2xl sm:rounded-3xl overflow-hidden">
-            <div class="px-5 sm:px-7 pt-6 pb-4 border-b border-slate-100 dark:border-slate-800 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
-              <div>
-                <div class="text-xs font-semibold uppercase tracking-wider text-sky-700 dark:text-sky-400 mb-1">Step 1</div>
-                <h2 class="text-xl font-semibold">Intake form</h2>
-                <p class="text-sm text-slate-500 mt-1">Stored in your Google Form responses sheet — one place for every lead.</p>
-              </div>
-              <a id="form-open-link" href="#" target="_blank" rel="noopener"
-                 class="btn-secondary inline-flex px-4 py-2 rounded-xl text-sm shrink-0">Open in new tab ↗</a>
-            </div>
-            <div class="p-2 sm:p-3 bg-slate-50/80 dark:bg-slate-950/40">
-              <iframe id="google-form-iframe"
-                      class="w-full rounded-xl border-0 bg-white"
-                      style="min-height:1100px"
-                      title="College Path intake form"
-                      loading="lazy"></iframe>
-            </div>
-          </li>
+        <!-- Guides (only here) -->
+        <div class="mb-12">
+          <div class="mb-5">
+            <div class="section-label mb-2">Guides</div>
+            <h2 class="font-display text-3xl tracking-tight">Free resources</h2>
+            <p class="mt-2 text-slate-600 dark:text-slate-400 text-sm sm:text-base max-w-2xl">
+              Practical UC explainers. Read first, book when you want a plan for your transcript.
+            </p>
+          </div>
+          <div id="guides-grid" class="grid sm:grid-cols-2 gap-4"></div>
+        </div>
 
-          <li class="card rounded-2xl sm:rounded-3xl overflow-hidden">
-            <div class="px-5 sm:px-7 pt-6 pb-4 border-b border-slate-100 dark:border-slate-800 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
-              <div>
-                <div class="text-xs font-semibold uppercase tracking-wider text-sky-700 dark:text-sky-400 mb-1">Step 2</div>
-                <h2 class="text-xl font-semibold">Schedule on Calendly</h2>
-                <p class="text-sm text-slate-500 mt-1">45-minute session · syncs to Google Calendar. (URL may say 30min — length is 45.)</p>
+        <!-- Booking -->
+        <div id="book" class="scroll-mt-24">
+          <div class="mb-6">
+            <div class="section-label mb-2">Book</div>
+            <h2 class="font-display text-3xl sm:text-4xl tracking-tight">Book a meeting</h2>
+            <p class="mt-2 text-slate-600 dark:text-slate-400 max-w-2xl">
+              <strong class="text-slate-800 dark:text-slate-200">$40 · 30 minutes.</strong>
+              Submit the intake form, then pick a time. Questions:
+              <a class="text-sky-700 dark:text-sky-400 underline" href="mailto:amir.katzir.email@gmail.com">amir.katzir.email@gmail.com</a>
+            </p>
+          </div>
+
+          <ol class="space-y-8 max-w-4xl">
+            <li class="card rounded-2xl sm:rounded-3xl overflow-hidden">
+              <div class="px-5 sm:px-7 pt-6 pb-4 border-b border-slate-100 dark:border-slate-800 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+                <div>
+                  <div class="text-xs font-semibold uppercase tracking-wider text-sky-700 dark:text-sky-400 mb-1">Step 1</div>
+                  <h3 class="text-xl font-semibold">Intake form</h3>
+                  <p class="text-sm text-slate-500 mt-1">Responses go to Google Drive.</p>
+                </div>
+                <a id="form-open-link" href="#" target="_blank" rel="noopener"
+                   class="btn-secondary inline-flex px-4 py-2 rounded-xl text-sm shrink-0">Open in new tab ↗</a>
               </div>
-              <a id="calendly-open-link" href="#" target="_blank" rel="noopener"
-                 class="btn-primary inline-flex px-4 py-2 rounded-xl text-sm shrink-0">Open Calendly ↗</a>
-            </div>
-            <div class="p-2 sm:p-3">
-              <iframe id="calendly-iframe"
-                      class="calendly-frame"
-                      title="Schedule a College Path session"
-                      loading="lazy"></iframe>
-            </div>
-          </li>
-        </ol>
+              <div class="p-2 sm:p-3 bg-slate-50/80 dark:bg-slate-950/40">
+                <iframe id="google-form-iframe"
+                        class="w-full rounded-xl border-0 bg-white"
+                        style="min-height:1100px"
+                        title="College Consulting intake form"
+                        loading="lazy"></iframe>
+              </div>
+            </li>
+
+            <li class="card rounded-2xl sm:rounded-3xl overflow-hidden">
+              <div class="px-5 sm:px-7 pt-6 pb-4 border-b border-slate-100 dark:border-slate-800 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+                <div>
+                  <div class="text-xs font-semibold uppercase tracking-wider text-sky-700 dark:text-sky-400 mb-1">Step 2</div>
+                  <h3 class="text-xl font-semibold">Schedule on Calendly</h3>
+                  <p class="text-sm text-slate-500 mt-1">30-minute session · Google Calendar</p>
+                </div>
+                <a id="calendly-open-link" href="#" target="_blank" rel="noopener"
+                   class="btn-primary inline-flex px-4 py-2 rounded-xl text-sm shrink-0">Open Calendly ↗</a>
+              </div>
+              <div class="p-2 sm:p-3">
+                <iframe id="calendly-iframe"
+                        class="calendly-frame"
+                        title="Schedule a College Consulting session"
+                        loading="lazy"></iframe>
+              </div>
+            </li>
+          </ol>
+
+          <p class="mt-6 text-sm text-slate-500 max-w-3xl">
+            Educational consulting only — no admission guarantees. Verify requirements on official UC, high school, and community college sources.
+          </p>
+        </div>
       </section>
 
-      <!-- READER (posts + guides) -->
+      <!-- ===================== ABOUT ===================== -->
+      <section id="view-about" class="hidden fade-in">
+        <div class="max-w-3xl mb-8">
+          <div class="section-label mb-3">About</div>
+          <h1 class="font-display text-4xl sm:text-5xl tracking-tight mb-6">Amir Katzir</h1>
+
+          <div class="card rounded-2xl sm:rounded-3xl p-6 sm:p-8 flex flex-col sm:flex-row gap-5 items-start">
+            <img src="https://avatars.githubusercontent.com/u/144059552?v=4" alt="Amir Katzir"
+                 class="w-20 h-20 sm:w-24 sm:h-24 rounded-2xl object-cover ring-1 ring-slate-200 dark:ring-slate-700 shrink-0" width="96" height="96">
+            <div>
+              <p class="text-lg sm:text-xl text-slate-800 dark:text-slate-100 leading-relaxed font-medium">
+                Actuarial Analyst @ Next Insurance. UC Berkeley Statistics.
+              </p>
+              <div class="mt-4 flex flex-wrap gap-3 text-sm">
+                <a href="https://www.linkedin.com/in/amir-katzir" target="_blank" rel="noopener" class="text-sky-700 dark:text-sky-400 font-medium hover:underline">LinkedIn ↗</a>
+                <a href="https://github.com/KatzirAmir" target="_blank" rel="noopener" class="text-sky-700 dark:text-sky-400 font-medium hover:underline">GitHub ↗</a>
+                <a href="assets/Amir-Katzir-Resume.pdf" target="_blank" rel="noopener" class="text-sky-700 dark:text-sky-400 font-medium hover:underline">Download resume PDF ↗</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Styled resume -->
+        <div class="card rounded-2xl sm:rounded-3xl p-6 sm:p-10 max-w-3xl">
+          <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-3 mb-8 pb-6 border-b resume-rule">
+            <div>
+              <h2 class="font-display text-3xl tracking-tight">Resume</h2>
+              <p class="text-sm text-slate-500 mt-1">Updated from latest Drive copy</p>
+            </div>
+            <a href="assets/Amir-Katzir-Resume.pdf" target="_blank" rel="noopener" class="btn-secondary text-sm px-4 py-2 rounded-xl inline-flex shrink-0">PDF</a>
+          </div>
+
+          <div class="mb-8">
+            <div class="section-label mb-3">Exams</div>
+            <div class="grid sm:grid-cols-3 gap-3 text-sm">
+              <div class="rounded-xl border border-slate-200 dark:border-slate-800 px-4 py-3">
+                <div class="font-semibold">Exam P</div>
+                <div class="text-slate-500">Passed May 2024</div>
+              </div>
+              <div class="rounded-xl border border-slate-200 dark:border-slate-800 px-4 py-3">
+                <div class="font-semibold">Exam FM</div>
+                <div class="text-slate-500">Passed Oct 2025</div>
+              </div>
+              <div class="rounded-xl border border-slate-200 dark:border-slate-800 px-4 py-3">
+                <div class="font-semibold">Exam MAS-I</div>
+                <div class="text-slate-500">Sitting May 2026</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="mb-8">
+            <div class="section-label mb-4">Work experience</div>
+            <div class="space-y-6">
+              <div>
+                <div class="flex flex-col sm:flex-row sm:justify-between sm:items-baseline gap-1">
+                  <h3 class="font-semibold text-lg">Actuarial Analyst · Next Insurance</h3>
+                  <span class="text-sm text-slate-500 shrink-0">Oct 2025 – Present</span>
+                </div>
+                <p class="text-sm text-slate-500 mb-2">Palo Alto, CA</p>
+                <ul class="text-sm text-slate-600 dark:text-slate-400 space-y-1.5 list-disc pl-5">
+                  <li>Executed Workers’ Compensation and Commercial Property base rate filings across multiple jurisdictions.</li>
+                  <li>Automated multi-line reporting with SQL and Python; hosted collaborative monthly reports on Confluence via Jupyter.</li>
+                </ul>
+              </div>
+              <div>
+                <div class="flex flex-col sm:flex-row sm:justify-between sm:items-baseline gap-1">
+                  <h3 class="font-semibold text-lg">Actuarial Intern · Next Insurance</h3>
+                  <span class="text-sm text-slate-500 shrink-0">Jun 2025 – Oct 2025</span>
+                </div>
+                <p class="text-sm text-slate-500 mb-2">Palo Alto, CA</p>
+                <ul class="text-sm text-slate-600 dark:text-slate-400 space-y-1.5 list-disc pl-5">
+                  <li>Built a claims “source of truth” dashboard used widely for internal performance tracking.</li>
+                  <li>Created PL and Inland Marine monitoring dashboards integrating policy and claims data.</li>
+                  <li>Addressed regulatory objections using S&amp;P Global / Capital IQ statutory data.</li>
+                </ul>
+              </div>
+              <div>
+                <div class="flex flex-col sm:flex-row sm:justify-between sm:items-baseline gap-1">
+                  <h3 class="font-semibold text-lg">Aon Early Careers Actuary Internship Program</h3>
+                  <span class="text-sm text-slate-500 shrink-0">Feb 2025 – Apr 2025</span>
+                </div>
+                <ul class="text-sm text-slate-600 dark:text-slate-400 space-y-1.5 list-disc pl-5 mt-2">
+                  <li>Medical vendor evaluations for self-insured plans; Excel projections of plan-paid claims and fees.</li>
+                  <li>Client-facing presentations with data-driven vendor recommendations.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="mb-8">
+            <div class="section-label mb-4">UC Berkeley projects</div>
+            <ul class="text-sm text-slate-600 dark:text-slate-400 space-y-2 list-disc pl-5">
+              <li><strong class="text-slate-800 dark:text-slate-200">Insurance Corporation Financials</strong> — Excel tool for 9,500+ rows of insurance data; trend models and forecast accuracy.</li>
+              <li><strong class="text-slate-800 dark:text-slate-200">California Fire Map</strong> — R/Shiny app for geospatial wildfire patterns (CAL FIRE API + shapefiles).</li>
+            </ul>
+          </div>
+
+          <div class="mb-8">
+            <div class="section-label mb-3">Education</div>
+            <div class="flex flex-col sm:flex-row sm:justify-between sm:items-baseline gap-1">
+              <div>
+                <div class="font-semibold text-lg">UC Berkeley</div>
+                <div class="text-sm text-slate-600 dark:text-slate-400">B.A. Statistics · GPA 3.67</div>
+              </div>
+              <span class="text-sm text-slate-500">May 2025</span>
+            </div>
+          </div>
+
+          <div>
+            <div class="section-label mb-3">Skills</div>
+            <div class="flex flex-wrap gap-2 text-sm">
+              <span class="px-3 py-1.5 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">SQL</span>
+              <span class="px-3 py-1.5 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">Python</span>
+              <span class="px-3 py-1.5 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">R</span>
+              <span class="px-3 py-1.5 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">Jupyter</span>
+              <span class="px-3 py-1.5 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">Quarto</span>
+              <span class="px-3 py-1.5 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">GitHub</span>
+              <span class="px-3 py-1.5 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">Shiny</span>
+              <span class="px-3 py-1.5 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">Microsoft Office</span>
+              <span class="px-3 py-1.5 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">LLMs / Prompting</span>
+              <span class="px-3 py-1.5 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">English · Hebrew</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================== READER ===================== -->
       <section id="view-reader" class="hidden fade-in">
         <button type="button" id="reader-back" onclick="closeReader()"
                 class="mb-5 inline-flex items-center text-sm font-medium gap-x-2 text-slate-500 hover:text-slate-800 dark:hover:text-slate-200">
@@ -492,8 +463,8 @@
           <h1 id="reader-title" class="font-display text-3xl sm:text-4xl md:text-5xl tracking-tight leading-[1.08] mb-6 sm:mb-8"></h1>
           <div id="reader-body" class="prose-custom max-w-none"></div>
           <div class="mt-10 pt-6 border-t border-slate-200 dark:border-slate-800 flex flex-col sm:flex-row gap-3 sm:items-center sm:justify-between">
-            <button type="button" onclick="showView('contact')" class="btn-primary px-5 py-2.5 rounded-xl text-sm w-full sm:w-auto">Book a session · $40</button>
-            <button type="button" onclick="showView('resources')" class="text-sm text-sky-700 dark:text-sky-400 font-medium">More guides →</button>
+            <button type="button" onclick="showView('home')" class="text-sm text-sky-700 dark:text-sky-400 font-medium">More posts →</button>
+            <button type="button" onclick="showView('consulting')" class="text-sm text-slate-500 hover:text-sky-600">College Consulting →</button>
           </div>
         </div>
       </section>
@@ -504,12 +475,12 @@
     <div class="max-w-6xl mx-auto px-4 sm:px-6 flex flex-col gap-5 sm:flex-row sm:justify-between sm:items-center">
       <div>
         <div class="font-semibold">Amir Katzir</div>
-        <div class="text-sm text-slate-500 mt-0.5">College Path · $40 / 45 min · amir.katzir.email@gmail.com</div>
+        <div class="text-sm text-slate-500 mt-0.5">Blog · College Consulting</div>
       </div>
       <div class="flex flex-wrap gap-x-4 gap-y-2 text-sm text-slate-500">
-        <button type="button" onclick="showView('services')" class="hover:text-sky-600">Services</button>
-        <button type="button" onclick="showView('resources')" class="hover:text-sky-600">Guides</button>
-        <button type="button" onclick="showView('contact')" class="hover:text-sky-600">Book</button>
+        <button type="button" onclick="showView('home')" class="hover:text-sky-600">Home</button>
+        <button type="button" onclick="showView('consulting')" class="hover:text-sky-600">College Consulting</button>
+        <button type="button" onclick="showView('about')" class="hover:text-sky-600">About</button>
         <a href="https://github.com/KatzirAmir" target="_blank" rel="noopener" class="hover:text-sky-600">GitHub ↗</a>
       </div>
       <div class="text-xs text-slate-400">© <span id="year"></span> Amir Katzir</div>
@@ -526,24 +497,18 @@
       </div>
       <nav class="space-y-0.5 text-[15px] flex-1">
         <button type="button" onclick="showView('home');closeMobileDrawer()" class="block w-full text-left py-3 px-2 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-900">Home</button>
-        <button type="button" onclick="showView('path');closeMobileDrawer()" class="block w-full text-left py-3 px-2 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-900">College Path</button>
-        <button type="button" onclick="showView('services');closeMobileDrawer()" class="block w-full text-left py-3 px-2 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-900">Services</button>
-        <button type="button" onclick="showView('resources');closeMobileDrawer()" class="block w-full text-left py-3 px-2 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-900">Guides</button>
-        <button type="button" onclick="showView('posts');closeMobileDrawer()" class="block w-full text-left py-3 px-2 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-900">Blog</button>
+        <button type="button" onclick="showView('consulting');closeMobileDrawer()" class="block w-full text-left py-3 px-2 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-900">College Consulting</button>
         <button type="button" onclick="showView('about');closeMobileDrawer()" class="block w-full text-left py-3 px-2 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-900">About</button>
-        <button type="button" onclick="showView('contact');closeMobileDrawer()" class="block w-full text-left py-3 px-2 rounded-xl font-semibold text-sky-700 dark:text-sky-400">Book · $40</button>
       </nav>
     </div>
   </div>
 
   <script>
-    /** Booking config — Google Form responses → Drive; Calendly → calendar */
     const CONTACT_EMAIL = 'amir.katzir.email@gmail.com';
-    // Calendly slug may say 30min; session length is 45 minutes in Calendly settings.
     const CALENDLY_URL = 'https://calendly.com/amir-katzir-email/30min';
     const GOOGLE_FORM_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSfz5crCMJiG4oHEZLbnzl8clBfOPikkrQ_5DbyNY6DR_mUbKA/viewform';
 
-    const VIEWS = ['home', 'path', 'services', 'resources', 'posts', 'about', 'contact', 'reader'];
+    const VIEWS = ['home', 'consulting', 'about', 'reader'];
 
     const POSTS = [
       {
@@ -569,14 +534,14 @@
       { slug: 'transfer-admission', title: 'UC Transfer Admission', summary: 'CCC → UC units, major prep, TAU, strategy.', icon: '🔁' },
       { slug: 'igetc', title: 'What is IGETC?', summary: 'GE pattern for transfer, AP/dual enrollment fit.', icon: '🧩' },
       { slug: 'dual-enrollment', title: 'Dual Enrollment', summary: 'CCC courses in high school — doable & strategic.', icon: '🏫' },
-      { slug: 'uc-cost', title: 'Cost of UC', summary: '2026–27 resident vs nonresident COA + aid notes.', icon: '💵' },
+      { slug: 'uc-cost', title: 'Cost of UC', summary: 'Resident vs nonresident COA + aid notes.', icon: '💵' },
       { slug: 'tag', title: 'What is TAG?', summary: 'Transfer Admission Guarantee, TAP, deadlines.', icon: '✅' },
-      { slug: 'services', title: 'Services explained', summary: '$40 / 45 min — what we cover and how to start.', icon: '🗓️' }
+      { slug: 'services', title: 'How sessions work', summary: '$40 / 30 min — what we cover.', icon: '🗓️' }
     ];
 
-    let lastView = 'home';
-    let readerReturn = 'resources';
+    let readerReturn = 'home';
     let currentFilterTag = null;
+    let bookingReady = false;
 
     function applyTheme(theme) {
       document.documentElement.classList.toggle('dark', theme === 'dark');
@@ -618,50 +583,46 @@
       }
 
       document.querySelectorAll('[data-nav]').forEach(btn => {
-        const nav = btn.getAttribute('data-nav');
-        const active = nav === view || (view === 'reader' && false);
-        btn.classList.toggle('nav-active', active);
+        btn.classList.toggle('nav-active', btn.getAttribute('data-nav') === view);
       });
 
-      if (view === 'posts') {
+      if (view === 'home') {
         renderActiveTagFilters();
         filterPosts();
       }
-      if (view === 'home') renderHomeRecent();
-      if (view === 'resources') renderGuidesGrid();
-      if (view === 'contact') renderContactIntegrations();
-
-      if (view !== 'reader') {
-        lastView = view;
-        setHash(view);
+      if (view === 'consulting') {
+        renderGuidesGrid();
+        setupBooking();
       }
 
+      if (view !== 'reader') setHash(view);
       window.scrollTo({ top: 0, behavior: 'smooth' });
       closeMobileDrawer();
     }
 
-    function renderContactIntegrations() {
+    function scrollToBook(e) {
+      if (e) e.preventDefault();
+      showView('consulting');
+      setTimeout(() => {
+        document.getElementById('book')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 80);
+    }
+
+    function setupBooking() {
       const formFrame = document.getElementById('google-form-iframe');
       const calFrame = document.getElementById('calendly-iframe');
       const formLink = document.getElementById('form-open-link');
       const calLink = document.getElementById('calendly-open-link');
-
-      if (formLink && GOOGLE_FORM_URL) {
-        formLink.href = GOOGLE_FORM_URL;
-        formLink.classList.remove('hidden');
+      if (formLink) formLink.href = GOOGLE_FORM_URL;
+      if (calLink) calLink.href = CALENDLY_URL;
+      if (formFrame && !formFrame.src) {
+        formFrame.src = GOOGLE_FORM_URL + (GOOGLE_FORM_URL.includes('?') ? '&' : '?') + 'embedded=true';
       }
-      if (calLink && CALENDLY_URL) {
-        calLink.href = CALENDLY_URL;
-        calLink.classList.remove('hidden');
-      }
-      if (formFrame && GOOGLE_FORM_URL) {
-        const sep = GOOGLE_FORM_URL.includes('?') ? '&' : '?';
-        formFrame.src = GOOGLE_FORM_URL + sep + 'embedded=true';
-      }
-      if (calFrame && CALENDLY_URL) {
+      if (calFrame && !calFrame.src) {
         calFrame.src = CALENDLY_URL.replace(/\/?$/, '') +
           '?hide_gdpr_banner=1&background_color=ffffff&text_color=0f172a&primary_color=0284c7';
       }
+      bookingReady = true;
     }
 
     function renderGuidesGrid() {
@@ -678,22 +639,6 @@
           <div class="text-sm text-slate-600 dark:text-slate-400">${g.summary}</div>
           <div class="text-sm font-semibold text-sky-700 dark:text-sky-400 mt-3">Read guide →</div>`;
         card.onclick = () => loadGuide(g.slug);
-        grid.appendChild(card);
-      });
-    }
-
-    function renderHomeRecent() {
-      const grid = document.getElementById('home-recent-grid');
-      if (!grid) return;
-      grid.innerHTML = '';
-      [...POSTS].sort((a, b) => b.date.localeCompare(a.date)).slice(0, 2).forEach(post => {
-        const card = document.createElement('div');
-        card.className = 'card card-hover rounded-2xl p-5 flex flex-col cursor-pointer';
-        card.innerHTML = `
-          <div class="font-semibold mb-1 group-hover:text-sky-700">${post.title}</div>
-          <div class="text-sm text-slate-600 dark:text-slate-400 flex-1">${post.excerpt}</div>
-          <div class="text-xs text-slate-500 mt-3">${formatDate(post.date)} · ${post.readTime}</div>`;
-        card.onclick = () => loadPost(post.slug);
         grid.appendChild(card);
       });
     }
@@ -763,7 +708,7 @@
     }
 
     async function openReader({ kind, slug, title, metaHtml, path }) {
-      readerReturn = kind === 'post' ? 'posts' : 'resources';
+      readerReturn = kind === 'post' ? 'home' : 'consulting';
       VIEWS.forEach(v => document.getElementById('view-' + v)?.classList.add('hidden'));
       document.getElementById('view-reader').classList.remove('hidden');
       document.getElementById('reader-meta').innerHTML = metaHtml || '';
@@ -778,7 +723,6 @@
         if (!res.ok) throw new Error('load failed');
         let md = await res.text();
         md = md.replace(/^---[\s\S]*?---\s*/, '');
-        // Drop duplicate H1 if present (title already shown)
         md = md.replace(/^#\s+.+\n+/, '');
         bodyEl.innerHTML = marked.parse(md);
         bodyEl.querySelectorAll('a').forEach(a => {
@@ -789,7 +733,7 @@
         });
       } catch (err) {
         bodyEl.innerHTML = `<div class="p-5 rounded-2xl bg-red-50 dark:bg-red-950/30 text-red-600 dark:text-red-300 text-sm">
-          Could not load content. Serve the site over HTTP (not file://).<br><code>${path}</code></div>`;
+          Could not load content. Serve over HTTP (not file://).<br><code>${path}</code></div>`;
         console.error(err);
       }
     }
@@ -813,13 +757,13 @@
         kind: 'guide',
         slug,
         title: g.title,
-        metaHtml: `<span class="text-sky-600 dark:text-sky-400">Guide</span><span>·</span><span>College Path</span>`,
+        metaHtml: `<span class="text-sky-600 dark:text-sky-400">Guide</span><span>·</span><span>College Consulting</span>`,
         path: `guides/${slug}.md`
       });
     }
 
     function closeReader() {
-      showView(readerReturn || 'resources');
+      showView(readerReturn || 'home');
     }
 
     function openMobileDrawer() {
@@ -836,6 +780,12 @@
       const [head, sub] = raw.split('/');
       if (head === 'post' && sub) { loadPost(sub); return; }
       if (head === 'guide' && sub) { loadGuide(sub); return; }
+      // legacy hashes
+      if (['path', 'services', 'resources', 'contact', 'posts'].includes(head)) {
+        if (head === 'posts') showView('home');
+        else showView('consulting');
+        return;
+      }
       if (VIEWS.includes(head) && head !== 'reader') showView(head);
       else showView('home');
     }
@@ -854,13 +804,12 @@
         }
         if (e.key === '/' && document.activeElement === document.body) {
           e.preventDefault();
-          showView('posts');
+          showView('home');
           setTimeout(() => document.getElementById('search-input')?.focus(), 50);
         }
       });
       window.addEventListener('hashchange', routeFromHash);
       routeFromHash();
-      console.log('%c[site] College Path ready · $40/45min · ' + CONTACT_EMAIL, 'color:#0284c7');
     }
 
     window.addEventListener('DOMContentLoaded', init);

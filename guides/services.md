@@ -1,14 +1,14 @@
 ---
 title: "Services — How Working Together Works"
 slug: "services"
-summary: "Simple offering: $40 per 45-minute session. What we cover — majors, dual enrollment, AP balance, TAG, and doable plans."
+summary: "Simple offering: $40 per 30-minute session. What we cover — majors, dual enrollment, AP balance, TAG, and doable plans."
 ---
 
 # Services — How Working Together Works
 
 ## Pricing
 
-**$40 per 45-minute session** (Zoom or similar).
+**$40 per 30-minute session** (Google Meet via Calendly).
 
 No multi-thousand-dollar packages required. Book what you need. Many families start with one session and continue only if useful.
 
@@ -64,9 +64,9 @@ No multi-thousand-dollar packages required. Book what you need. Many families st
 
 1. **Fill the interest / intake form:**  
    [College Path interest form](https://docs.google.com/forms/d/e/1FAIpQLSfz5crCMJiG4oHEZLbnzl8clBfOPikkrQ_5DbyNY6DR_mUbKA/viewform)  
-2. **Book a 45-minute slot** on Calendly:  
+2. **Book a 30-minute slot** on Calendly:  
    [calendly.com/amir-katzir-email/30min](https://calendly.com/amir-katzir-email/30min)  
-   (URL slug may say 30min; the meeting is 45 minutes.)  
+   (URL slug may say 30min; the meeting is 30 minutes.)  
 3. **Send materials before the call** (transcript screenshot, course list, target majors) if you have them  
 4. Show up with the #1 question you need answered  
 

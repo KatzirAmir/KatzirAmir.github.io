@@ -1,13 +1,13 @@
 # Calendly + Google Form setup (College Path)
 
 Contact email: **amir.katzir.email@gmail.com**  
-Session: **$40 · 45 minutes**
+Session: **$40 · 30 minutes**
 
 The website reads two constants in `index.html`:
 
 ```js
 const CONTACT_EMAIL = 'amir.katzir.email@gmail.com';
-// Live links (session is 45 min; Calendly URL slug may still say 30min):
+// Live links (session is 30 min; Calendly URL slug may still say 30min):
 const CALENDLY_URL = 'https://calendly.com/amir-katzir-email/30min';
 const GOOGLE_FORM_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSfz5crCMJiG4oHEZLbnzl8clBfOPikkrQ_5DbyNY6DR_mUbKA/viewform';
 ```
@@ -40,9 +40,9 @@ const GOOGLE_FORM_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSfz5crCMJiG4oH
 | Field | Value |
 |--------|--------|
 | Name | College Path Session |
-| Duration | **45 min** |
+| Duration | **30 min** |
 | Location | Google Meet (Calendly can auto-create) |
-| Description | 45-minute college path advising session with Amir Katzir. Fee: $40. Please submit the intake form on the website before the call when possible. Educational only — no admission guarantees. |
+| Description | 30-minute college path advising session with Amir Katzir. Fee: $40. Please submit the intake form on the website before the call when possible. Educational only — no admission guarantees. |
 | Date range | Rolling 60 days (or whatever you prefer) |
 | Availability | e.g. weeknights + weekend blocks you actually want |
 | Buffer | 5–10 min after events |
