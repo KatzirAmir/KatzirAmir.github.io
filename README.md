@@ -1,7 +1,7 @@
 # Amir Katzir - Blog & College Path
 
 - **Blog** - personal writing 
-- **College Path** - Bay Area / UC advising at **$40 per 30-minute session**
+- **College Path** - Bay Area / UC advising (email for rates)
 
 Contact: **amir.katzir.email@gmail.com** 
 Live (when deployed): https://katziramir.github.io
@@ -22,7 +22,7 @@ Open http://localhost:8000
 |------|---------|
 | Home | Landing |
 | College Path | Positioning |
-| Services | $40 / 30 min |
+| Services | Email for rates |
 | Guides | Deep Markdown guides in `/guides` |
 | Blog | Posts in `/posts/<slug>/post.md` |
 | About | Bio |

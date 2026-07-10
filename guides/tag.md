@@ -110,7 +110,7 @@ High school dual enrollment can help you reach unit and course milestones earlie
 
 ---
 
-## Session help ($40 / 30 min)
+## Session help
 
 We can:
 

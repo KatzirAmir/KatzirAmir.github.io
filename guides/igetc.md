@@ -78,7 +78,7 @@ Partial certification exists when you’re missing limited areas - don’t inven
 
 ---
 
-## How I use IGETC in a $40 session
+## How I use IGETC in a session
 
 - Map completed courses to an IGETC checklist 
 - Decide full vs partial for your major targets 

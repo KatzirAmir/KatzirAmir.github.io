@@ -120,7 +120,7 @@ Competitiveness comes from **grades + coherent progression**, not from maximal u
 
 ---
 
-## Session outcomes ($40 / 30 min)
+## Session outcomes
 
 We can build a dual enrollment plan that is:
 
