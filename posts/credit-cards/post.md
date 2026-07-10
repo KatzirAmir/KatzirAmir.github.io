@@ -2,7 +2,7 @@
 title: "Credit Card Optimization: My Cashback Setup at 21"
 date: "2026-06-15"
 tags: ["finance"]
-excerpt: "How I treat cashback like a game at 21: what's in my wallet now, how I started, and the setup I'm aiming for."
+excerpt: "How I treat cashback like a game at 21: what is in my wallet now, how I started, and the setup I am aiming for."
 readTime: "4 min"
 ---
 
@@ -16,16 +16,11 @@ Not financial advice. Card terms change. Pay in full.
 
 These are the ones I actually keep in my wallet:
 
-### Robinhood Gold
-**3%** cash back on everything.
+**Robinhood Gold:** 3% cash back on everything. There's a $50 annual Gold subscription fee, but it pays for itself with the 3% match on my Roth IRA contributions plus the $1,000 interest-free margin I use for SGOV.
 
-There's a $50 annual Gold subscription fee, but it pays for itself with the 3% match on my Roth IRA contributions plus the $1,000 interest-free margin I use for SGOV.
+**Discover it:** 5% on the quarterly rotating categories.
 
-### Discover it
-**5%** on the quarterly rotating categories.
-
-### Chase Freedom Flex
-**5%** on the quarterly rotating categories.
+**Chase Freedom Flex:** 5% on the quarterly rotating categories.
 
 I also have some older cards from Fidelity, Capital One, and a credit union. Robinhood Gold has basically made most of them obsolete, other than my Fidelity card that subsidized my Global Entry (100% worth it).
 
@@ -41,12 +36,12 @@ To push cashback higher, here's what I'm aiming for:
 
 | Card | Why |
 |------|-----|
-| Robinhood 3% (no foreign transaction fee version) | Flat catch-all, good abroad |
+| Robinhood 3% (no FTF version) | Flat catch-all, good abroad |
 | Amazon Prime Visa | 5% at Amazon |
-| Elan Max Cash Preferred | 5% on utilities, internet, gym, and similar |
+| Elan Max Cash Preferred | 5% utilities / internet / gym-type spend |
 | Chase Freedom Flex | 5% rotating categories |
 | Discover it | 5% rotating categories |
-| Maybe a travel card later | When trips are regular enough |
+| Travel card later | When I take more trips |
 
 ## Bottom line
 
