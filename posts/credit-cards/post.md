@@ -1,68 +1,58 @@
 ---
-title: "Credit Cards"
+title: "Credit Card Optimization: My Cashback Setup at 21"
 date: "2026-06-15"
 tags: ["finance"]
-excerpt: "My current cash-back setup: which cards I use and what categories they hit."
-readTime: "3 min"
+excerpt: "How I treat cashback like a game at 21: what's in my wallet now, how I started, and the setup I'm aiming for."
+readTime: "4 min"
 ---
 
-# Credit Cards
+# Credit Card Optimization: My Cashback Setup at 21
 
-Simple setup I actually use. Not financial advice. Categories change, so always double-check the card terms.
+I've always liked optimizing stuff in my life, and credit cards are one of those things I treat like a fun game. At 21 I have 8 credit cards, mostly cashback-focused, because my spending is still pretty minimal and I don't travel that often.
 
-## The stack
+Not financial advice. Card terms change. Pay in full.
 
-### Robinhood Gold card
-**~3%** cash back, no foreign transaction fee.
+## My main cards right now
 
-Everyday catch-all when nothing else fits better. Also useful abroad because of the no FTF.
+These are the ones I actually keep in my wallet:
 
-### Amazon Prime Visa
-**5%** on Amazon (with Prime).
+### Robinhood Gold
+**3%** cash back on everything.
 
-Default for Amazon purchases. Easy win if you already shop there a lot.
-
-### Elan Max Cash Preferred
-**5%** in selected categories (utilities, internet, gym, and more depending on how you set it).
-
-I use this for bills that land in those buckets. Worth mapping your utilities and subscriptions onto it.
-
-### U.S. Bank Altitude Connect
-**4%** on gas, plus travel-style perks.
-
-Gas card. Travel perks are a nice bonus when they apply.
-
-### Chase Freedom Flex
-**5%** rotating categories (quarterly).
-
-Activate the quarter every time. Stacks well with Chase ecosystem if you already have Freedom Unlimited / Sapphire later.
+There's a $50 annual Gold subscription fee, but it pays for itself with the 3% match on my Roth IRA contributions plus the $1,000 interest-free margin I use for SGOV.
 
 ### Discover it
-**5%** rotating categories (quarterly).
+**5%** on the quarterly rotating categories.
 
-Same idea as Flex: activate, spend in the category, done. First-year cash-back match used to be a big Discover pitch; check whatever promo is live when you apply.
+### Chase Freedom Flex
+**5%** on the quarterly rotating categories.
 
-## How I think about it
+I also have some older cards from Fidelity, Capital One, and a credit union. Robinhood Gold has basically made most of them obsolete, other than my Fidelity card that subsidized my Global Entry (100% worth it).
 
-1. **Route spend** into the highest relevant category first (Amazon, gas, utilities, quarterly 5%s).
-2. **Everything else** goes on the flat ~3% card (Robinhood for me).
-3. **Don't open cards for fun.** Annual fees only make sense if you clear them with real use.
-4. **Pay in full.** Cash back is not worth interest.
+## My philosophy (and advice if you're starting young)
 
-## Rough category map
+I started early and mostly looked for cashback cards with solid sign-up bonuses and categories that matched what I actually spend on, like groceries and restaurants. The Capital One Savor was a good fit for that phase.
 
-| Spend type | Card I lean on |
-|------------|----------------|
-| Amazon | Amazon Prime Visa (5%) |
-| Gas | Altitude Connect (4%) |
-| Utilities / internet / gym-type | Elan Max Cash Pref (5% when set) |
-| Quarterly rotating 5% | Freedom Flex or Discover it |
-| Everything else / abroad | Robinhood (~3%, no FTF) |
+Once you travel more, a lower-end travel card can make sense. I don't see much point in higher-end travel cards right now. Optimizing all those benefits gets complicated and can nudge you to spend on stuff you don't really need. I'll probably only get a travel card once I'm doing my plan of one domestic and one international trip per year, or if it helps me get a companion pass.
 
-## Notes
+## My future card setup
 
-- Rotating categories need activation. Miss the activation and you get the base rate.
-- "Gym and more" style 5% categories are product-specific. Confirm your exact Elan category list.
-- Credit cards are optional. If you carry a balance, none of this math works.
+To push cashback higher, here's what I'm aiming for:
 
-If I change the setup later I'll update this post.
+| Card | Why |
+|------|-----|
+| Robinhood 3% (no foreign transaction fee version) | Flat catch-all, good abroad |
+| Amazon Prime Visa | 5% at Amazon |
+| Elan Max Cash Preferred | 5% on utilities, internet, gym, and similar |
+| Chase Freedom Flex | 5% rotating categories |
+| Discover it | 5% rotating categories |
+| Maybe a travel card later | When trips are regular enough |
+
+## Bottom line
+
+1. Match cards to **real spend**, not fantasy travel.
+2. Activate rotating categories every quarter.
+3. Fees only if they clearly pay for themselves (IRA match, Global Entry, etc.).
+4. Pay in full. Cashback loses to interest every time.
+
+I'll update this if the wallet changes.
