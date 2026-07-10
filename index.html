@@ -170,13 +170,13 @@
  /* iOS-style segment control */
  .segment-track {
  display: grid;
- grid-template-columns: 1fr 1fr;
+ grid-template-columns: 1fr 1fr 1fr;
  gap: 4px;
  padding: 4px;
  border-radius: 14px;
  background: rgba(148, 163, 184, 0.18);
  border: 1px solid var(--line);
- max-width: 22rem;
+ max-width: 28rem;
  margin: 0 auto;
  position: relative;
  }
@@ -186,34 +186,41 @@
  z-index: 1;
  border: 0;
  background: transparent;
- padding: 0.65rem 1rem;
+ padding: 0.65rem 0.5rem;
  border-radius: 11px;
- font-size: 0.9rem;
+ font-size: 0.82rem;
  font-weight: 600;
  color: var(--muted);
  transition: color 0.2s ease;
+ white-space: nowrap;
+ }
+ @media (min-width: 640px) {
+ .segment-btn { font-size: 0.9rem; padding: 0.65rem 0.75rem; }
  }
  .segment-btn.is-active { color: var(--ink); }
  .segment-pill {
  position: absolute;
  top: 4px; bottom: 4px; left: 4px;
- width: calc(50% - 4px);
+ width: calc((100% - 8px - 8px) / 3);
  border-radius: 11px;
  background: var(--card);
  box-shadow: 0 1px 3px rgba(15,23,42,0.12), 0 4px 12px rgba(15,23,42,0.06);
  transition: transform 0.28s cubic-bezier(0.32, 0.72, 0, 1);
  z-index: 0;
  }
- .segment-pill.on-resume { transform: translateX(100%); }
+ /* gap is 4px between 3 cells */
+ .segment-pill.on-personality { transform: translateX(calc(100% + 4px)); }
+ .segment-pill.on-resume { transform: translateX(calc(200% + 8px)); }
 
  .about-panels {
  display: grid;
- grid-template-columns: 100% 100%;
+ grid-template-columns: 100% 100% 100%;
  width: 100%;
  transition: transform 0.35s cubic-bezier(0.32, 0.72, 0, 1);
  will-change: transform;
  }
- .about-panels.show-resume { transform: translateX(-100%); }
+ .about-panels.show-personality { transform: translateX(-100%); }
+ .about-panels.show-resume { transform: translateX(-200%); }
  .about-panel { width: 100%; min-width: 100%; }
  .about-swipe-wrap {
  overflow: hidden;
@@ -467,10 +474,11 @@
  </div>
  </div>
 
- <!-- iOS-style segment: DNA | Resume -->
+ <!-- iOS-style segment: DNA | Personality | Resume -->
  <div class="segment-track mb-6" role="tablist" aria-label="About sections">
  <div id="segment-pill" class="segment-pill" aria-hidden="true"></div>
  <button type="button" class="segment-btn is-active" data-about-tab="dna" role="tab" aria-selected="true">DNA</button>
+ <button type="button" class="segment-btn" data-about-tab="personality" role="tab" aria-selected="false">Personality</button>
  <button type="button" class="segment-btn" data-about-tab="resume" role="tab" aria-selected="false">Resume</button>
  </div>
  <p class="text-center text-xs text-slate-500 mb-5">Swipe left/right · or tap a tab</p>
@@ -576,14 +584,65 @@
 
  <!-- Wellness / fun -->
  <div class="mb-2">
- <div class="section-label mb-2">Body &amp; lifestyle</div>
- <p class="text-sm text-slate-500 mb-4">A few non-medical wellness-style results. Still probabilistic.</p>
+ <div class="section-label mb-4">Body &amp; lifestyle</div>
  <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-3" id="dna-wellness-grid"></div>
  </div>
 
  <p class="text-xs text-slate-400 mt-8 leading-relaxed border-t resume-rule pt-5">
- From my personal 23andMe Reports Summary. Not medical advice. These reports miss plenty of variants, and lifestyle matters a lot. I left health predisposition and carrier reports off this page on purpose.
+ These are genetic predictions and they do not fully reflect my true traits.
  </p>
+ </div>
+ </div>
+
+
+ <!-- PERSONALITY PANEL -->
+ <div class="about-panel px-0.5" data-panel="personality" role="tabpanel">
+ <div class="card rounded-2xl sm:rounded-3xl p-6 sm:p-10 lg:p-12">
+ <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-3 mb-8 pb-6 border-b resume-rule">
+ <div>
+ <h2 class="font-display text-3xl tracking-tight">Personality &amp; hobbies</h2>
+ <p class="text-sm text-slate-500 mt-1">How I think and what I nerd out on</p>
+ </div>
+ <span class="inline-flex items-center px-3 py-1.5 rounded-full text-xs font-semibold bg-indigo-50 text-indigo-700 dark:bg-indigo-950 dark:text-indigo-300 border border-indigo-100 dark:border-indigo-900">INTJ</span>
+ </div>
+
+ <div class="mb-10">
+ <div class="section-label mb-3">Type</div>
+ <h3 class="text-xl font-semibold mb-3">INTJ</h3>
+ <p class="text-slate-600 dark:text-slate-400 leading-relaxed mb-4">
+ I'm an INTJ. I like systems, long-range plans, and figuring out how things actually work under the hood.
+ Small talk is fine, but I get more energy from ideas, models, and patterns than from noise.
+ </p>
+ <p class="text-slate-600 dark:text-slate-400 leading-relaxed">
+ That shows up in how I plan college paths, dig through data, and build little mental frameworks for decisions.
+ I would rather get one clean model of a problem than collect a pile of half-related opinions.
+ </p>
+ </div>
+
+ <div class="mb-2">
+ <div class="section-label mb-4">What I read and scroll for</div>
+ <p class="text-slate-600 dark:text-slate-400 leading-relaxed mb-5">
+ A lot of my free time goes to reading blogs and scrolling X (Twitter) to learn. The topics I keep coming back to:
+ </p>
+ <div class="grid sm:grid-cols-2 gap-3">
+ <div class="rounded-2xl border border-slate-200 dark:border-slate-800 p-4">
+ <div class="font-semibold mb-1">Population genetics</div>
+ <div class="text-sm text-slate-500">Ancestry, haplogroups, and how traits move through populations over time.</div>
+ </div>
+ <div class="rounded-2xl border border-slate-200 dark:border-slate-800 p-4">
+ <div class="font-semibold mb-1">Public policy</div>
+ <div class="text-sm text-slate-500">How incentives, institutions, and rules shape real outcomes.</div>
+ </div>
+ <div class="rounded-2xl border border-slate-200 dark:border-slate-800 p-4">
+ <div class="font-semibold mb-1">AI / Tech</div>
+ <div class="text-sm text-slate-500">New tools, model progress, and practical uses in work and research.</div>
+ </div>
+ <div class="rounded-2xl border border-slate-200 dark:border-slate-800 p-4">
+ <div class="font-semibold mb-1">Stats &amp; academic work</div>
+ <div class="text-sm text-slate-500">Papers, methods, and statistical ideas from academic studies in quantitative fields.</div>
+ </div>
+ </div>
+ </div>
  </div>
  </div>
 
@@ -903,7 +962,8 @@
  }
 
  function setAboutTab(tab, animate) {
- aboutTab = tab === 'resume' ? 'resume' : 'dna';
+ const allowed = ['dna', 'personality', 'resume'];
+ aboutTab = allowed.includes(tab) ? tab : 'dna';
  const panels = document.getElementById('about-panels');
  const pill = document.getElementById('segment-pill');
  document.querySelectorAll('[data-about-tab]').forEach(btn => {
@@ -912,17 +972,26 @@
  btn.setAttribute('aria-selected', on ? 'true' : 'false');
  });
  if (panels) {
+ const apply = () => {
+ panels.classList.remove('show-personality', 'show-resume');
+ if (aboutTab === 'personality') panels.classList.add('show-personality');
+ if (aboutTab === 'resume') panels.classList.add('show-resume');
+ };
  if (animate === false) {
  const prev = panels.style.transition;
  panels.style.transition = 'none';
- panels.classList.toggle('show-resume', aboutTab === 'resume');
+ apply();
  void panels.offsetWidth;
  panels.style.transition = prev || '';
  } else {
- panels.classList.toggle('show-resume', aboutTab === 'resume');
+ apply();
  }
  }
- if (pill) pill.classList.toggle('on-resume', aboutTab === 'resume');
+ if (pill) {
+ pill.classList.remove('on-personality', 'on-resume');
+ if (aboutTab === 'personality') pill.classList.add('on-personality');
+ if (aboutTab === 'resume') pill.classList.add('on-resume');
+ }
  }
 
  function traitCardHtml(t) {
@@ -991,8 +1060,10 @@
  const dx = t.clientX - startX;
  const dy = t.clientY - startY;
  if (Math.abs(dx) < 48 || Math.abs(dx) < Math.abs(dy)) return;
- if (dx < 0) setAboutTab('resume', true);
- else setAboutTab('dna', true);
+ const order = ['dna', 'personality', 'resume'];
+ const i = order.indexOf(aboutTab);
+ if (dx < 0 && i < order.length - 1) setAboutTab(order[i + 1], true);
+ if (dx > 0 && i > 0) setAboutTab(order[i - 1], true);
  }, { passive: true });
  }
 
@@ -1181,8 +1252,12 @@
  }
  // arrow keys on about
  if (!document.getElementById('view-about')?.classList.contains('hidden')) {
- if (e.key === 'ArrowRight') setAboutTab('resume', true);
- if (e.key === 'ArrowLeft') setAboutTab('dna', true);
+ if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') {
+ const order = ['dna', 'personality', 'resume'];
+ const i = order.indexOf(aboutTab);
+ if (e.key === 'ArrowRight' && i < order.length - 1) setAboutTab(order[i + 1], true);
+ if (e.key === 'ArrowLeft' && i > 0) setAboutTab(order[i - 1], true);
+ }
  }
  });
  window.addEventListener('hashchange', routeFromHash);
