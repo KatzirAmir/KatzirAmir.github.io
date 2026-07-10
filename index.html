@@ -10,7 +10,7 @@
  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
  <link rel="preconnect" href="https://fonts.googleapis.com">
  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
- <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+ <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E📝%3C/text%3E%3C/svg%3E">
  <script>
  tailwind.config = {
@@ -19,7 +19,7 @@
  extend: {
  fontFamily: {
  sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
- display: ['Instrument Serif', 'ui-serif', 'Georgia', 'serif'],
+ display: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
  },
  boxShadow: {
  soft: '0 1px 2px rgba(15,23,42,0.04), 0 8px 24px rgba(15,23,42,0.06)',
@@ -54,7 +54,7 @@
  -webkit-font-smoothing: antialiased;
  overflow-x: hidden;
  }
- .font-display { font-family: 'Instrument Serif', ui-serif, Georgia, serif; }
+ .font-display { font-family: Inter, ui-sans-serif, system-ui, sans-serif; font-weight: 800; letter-spacing: -0.03em; }
  .nav-link { color: var(--muted); transition: color 0.15s ease; }
  .nav-link:hover, .nav-link.nav-active { color: var(--ink); }
  .nav-link.nav-active { font-weight: 600; }
@@ -104,13 +104,13 @@
  .prose-custom { line-height: 1.8; font-size: 1.02rem; color: #334155; word-wrap: break-word; }
  .dark .prose-custom { color: #cbd5e1; }
  .prose-custom h1, .prose-custom h2, .prose-custom h3 {
- font-family: 'Instrument Serif', ui-serif, Georgia, serif;
- font-weight: 400; letter-spacing: -0.02em; color: var(--ink);
- margin-top: 1.75em; margin-bottom: 0.55em; line-height: 1.2;
+ font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+ font-weight: 700; letter-spacing: -0.025em; color: var(--ink);
+ margin-top: 1.75em; margin-bottom: 0.55em; line-height: 1.25;
  }
- .prose-custom h1 { font-size: 1.85rem; margin-top: 0; }
- .prose-custom h2 { font-size: 1.35rem; margin-top: 2em; text-align: left; }
- .prose-custom h3 { font-size: 1.25rem; }
+ .prose-custom h1 { font-size: 1.75rem; margin-top: 0; font-weight: 800; }
+ .prose-custom h2 { font-size: 1.25rem; margin-top: 2em; text-align: left; font-weight: 700; }
+ .prose-custom h3 { font-size: 1.1rem; font-weight: 700; }
  .prose-custom p { margin-bottom: 1em; }
  .prose-custom a { color: #0284c7; text-decoration: underline; text-underline-offset: 3px; }
  .dark .prose-custom a { color: #38bdf8; }
@@ -118,8 +118,8 @@
  .prose-custom li { margin-bottom: 0.35em; }
  .prose-custom table {
  width: 100%;
- max-width: 36rem;
- margin: 1.5em auto;
+ max-width: 100%;
+ margin: 1.75em auto;
  border-collapse: collapse;
  font-size: 0.95rem;
  display: table;
@@ -276,7 +276,7 @@
  <button type="button" onclick="showView('home')" class="flex items-center gap-2.5 sm:gap-3 group shrink-0 min-w-0">
  <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-slate-900 dark:bg-sky-500 text-white flex items-center justify-center text-xs sm:text-sm font-bold shrink-0">AK</div>
  <div class="text-left leading-tight min-w-0">
- <div class="font-semibold tracking-tight text-sm sm:text-base text-slate-900 dark:text-slate-50 truncate">Amir Katzir</div>
+ <div class="font-bold tracking-tight text-sm sm:text-base text-slate-900 dark:text-slate-50 truncate">Amir Katzir</div>
  <div class="text-[9px] sm:text-[10px] uppercase tracking-[0.14em] text-slate-500 font-medium">Blog</div>
  </div>
  </button>
@@ -300,7 +300,7 @@
  </header>
 
  <main>
- <div class="max-w-6xl mx-auto px-4 sm:px-6 pt-6 sm:pt-10 pb-16 sm:pb-20">
+ <div class="max-w-6xl mx-auto px-6 sm:px-10 lg:px-16 pt-6 sm:pt-10 pb-16 sm:pb-20">
 
  <!-- ===================== HOME = BLOG ===================== -->
  <section id="view-home" class="fade-in">
@@ -699,13 +699,13 @@
 
  <!-- ===================== READER ===================== -->
  <section id="view-reader" class="hidden fade-in">
- <div class="max-w-2xl mx-auto px-2 sm:px-6">
+ <div class="max-w-xl mx-auto px-6 sm:px-8 lg:px-4">
  <button type="button" id="reader-back" onclick="closeReader()"
  class="mb-6 inline-flex items-center text-sm font-medium gap-x-2 text-slate-500 hover:text-slate-800 dark:hover:text-slate-200">
  ← Back
  </button>
  <div id="reader-meta" class="flex flex-wrap justify-center gap-x-3 gap-y-1 text-xs text-slate-500 mb-3 text-center"></div>
- <h1 id="reader-title" class="font-display text-3xl sm:text-4xl md:text-[2.75rem] tracking-tight leading-[1.1] mb-8 text-center"></h1>
+ <h1 id="reader-title" class="font-display text-3xl sm:text-4xl md:text-[2.6rem] tracking-tight leading-[1.15] mb-8 text-center font-extrabold"></h1>
  <div id="reader-body" class="prose-custom max-w-none mx-auto"></div>
  <div class="mt-12 pt-6 border-t border-slate-200 dark:border-slate-800 flex flex-col sm:flex-row gap-3 sm:items-center sm:justify-center text-center">
  <button type="button" onclick="showView('home')" class="text-sm text-sky-700 dark:text-sky-400 font-medium">More posts →</button>

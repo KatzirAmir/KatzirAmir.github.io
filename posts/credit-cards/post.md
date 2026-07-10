@@ -16,11 +16,11 @@ Not financial advice. Card terms change. Pay in full.
 
 These are the ones I actually keep in my wallet:
 
-**Robinhood Gold:** 3% cash back on everything. There's a $50 annual Gold subscription fee, but it pays for itself with the 3% match on my Roth IRA contributions plus the $1,000 interest-free margin I use for SGOV.
-
-**Discover it:** 5% on the quarterly rotating categories.
-
-**Chase Freedom Flex:** 5% on the quarterly rotating categories.
+| Card | Cashback / notes |
+|------|------------------|
+| Robinhood Gold | 3% on everything. $50 Gold fee, but it pays for itself with the 3% Roth IRA match plus $1,000 interest-free margin I use for SGOV. |
+| Discover it | 5% quarterly rotating categories |
+| Chase Freedom Flex | 5% quarterly rotating categories |
 
 I also have some older cards from Fidelity, Capital One, and a credit union. Robinhood Gold has basically made most of them obsolete, other than my Fidelity card that subsidized my Global Entry (100% worth it).
 
@@ -45,9 +45,11 @@ To push cashback higher, here's what I'm aiming for:
 
 ## Bottom line
 
-1. Match cards to **real spend**, not fantasy travel.
-2. Activate rotating categories every quarter.
-3. Fees only if they clearly pay for themselves (IRA match, Global Entry, etc.).
-4. Pay in full. Cashback loses to interest every time.
+| Rule | What I do |
+|------|-----------|
+| Real spend | Match cards to what I actually buy, not fantasy travel |
+| Rotating 5% | Activate categories every quarter |
+| Fees | Only if they clearly pay for themselves (IRA match, Global Entry, etc.) |
+| Balance | Pay in full. Cashback loses to interest every time |
 
 I'll update this if the wallet changes.

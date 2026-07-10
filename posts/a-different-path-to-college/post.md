@@ -16,9 +16,11 @@ I went to Henry M. Gunn High School in the Palo Alto Unified School District (PA
 
 Once I decided early graduation was the primary goal (with community college + TAG as a very strong backup), I loaded up. During junior year I took **10 classes**, four of them outside of Gunn:
 
-- Hebrew at Beged Kefet Hebrew Language School (personal interest + IGETC Area 6 credit)
-- Online APs through UC Scout
-- Dual enrollment courses (some chosen specifically as efficient IGETC fillers)
+| Outside course | Why |
+|----------------|-----|
+| Hebrew at Beged Kefet | Personal interest + IGETC Area 6 credit |
+| Online APs through UC Scout | Extra rigor / credit without more seat time at Gunn |
+| Dual enrollment courses | Efficient IGETC fillers and college units |
 
 This combination, plus passing four APs with solid scores, meant I only needed **15 credits the following summer** to hit TAG eligibility.
 
@@ -26,9 +28,15 @@ I used **assist.org** constantly to map courses, understand major preparation, a
 
 ## The Critical Summer Sprint at Foothill
 
-Right after junior year I did the TAG sprint at Foothill College: Principles of Macroeconomics (Econ 1A), Principles of Microeconomics (Econ 1B), and Calculus 1A (Math 1A) - 15 units total, strong grades, and Dean's List.
+Right after junior year I did the TAG sprint at Foothill College:
 
-That summer + everything before it got me TAG-eligible. I also dug deep into official UC transfer rules, campus major-prep maps on assist.org, and public admit-rate data so the plan was numbers-driven instead of guesswork.
+| Course | Units / notes |
+|--------|----------------|
+| Principles of Macroeconomics (Econ 1A) | Part of the 15-unit summer load |
+| Principles of Microeconomics (Econ 1B) | Part of the 15-unit summer load |
+| Calculus 1A (Math 1A) | Part of the 15-unit summer load |
+
+Strong grades, Dean's List. That summer + everything before it got me TAG-eligible. I also dug deep into official UC transfer rules, campus major-prep maps on assist.org, and public admit-rate data so the plan was numbers-driven instead of guesswork.
 
 Although my real interests were in Statistics / data / math (Financial Mathematics and Statistics at UCSB was the dream program), I applied to **Economics** at the UCs, including UC Berkeley. It was close enough academically and strategically smarter for admission in some cases. I finished all lower-division requirements early (by end of the fall quarter prior to transfer). You can always switch or add majors later in many cases - getting in the door is the hard part.
 
@@ -44,20 +52,24 @@ I completed IGETC (using Foothill courses + AP credits + even high school Hebrew
 
 ## Resources That Actually Mattered
 
-- **assist.org** - the single most important tool for articulation, IGETC lists, and major prep planning.
-- **UC TAG (Transfer Admission Guarantee)** - especially for UCSB, with the 30-unit / English + Math readiness rules.
-- Official UC tools: TAP for TAG, the Transfer Academic Update (TAU), and the public transfer-by-major admit rate data.
-- Term-by-term planning (the Amir College Plan spreadsheet) so every unit had a job.
-- Foothill counseling + PAUSD off-campus course policies (the Econ approval fight was real - persistence and a clear "or I won't graduate on time" case helped).
-- Direct records: petitions, transcripts, AP score reports, counselor notes.
+| Resource | Role |
+|----------|------|
+| assist.org | Articulation, IGETC lists, major prep planning |
+| UC TAG | Especially UCSB; unit / English / math readiness rules |
+| Official UC tools | TAP for TAG, TAU, transfer-by-major admit data |
+| Amir College Plan spreadsheet | Term-by-term grid so every unit had a job |
+| Foothill + PAUSD policies | Off-campus / dual enrollment approvals (the Econ fight was real) |
+| Paper trail | Petitions, transcripts, AP scores, counselor notes |
 
 ## What I Learned
 
-- Early exit + CC transfer is viable and often *better* for the right student - cheaper, more focused, and you arrive at the UC with real momentum.
-- The "silly" filler classes are legitimate if they genuinely complete IGETC or other requirements.
-- Major choice on the application is strategic. You can pivot later.
-- Keep *everything* documented. You will need the paper trail.
-- Workload is brutal in short bursts (10 classes junior year + outside + summer intensive), but doable when you have a clear goal and a solid Plan B.
+| Lesson | Takeaway |
+|--------|----------|
+| Early exit + CC transfer | Viable and often *better* for the right student: cheaper, more focused, real momentum into UC |
+| "Filler" classes | Fine if they actually complete IGETC or other requirements |
+| Major choice | Strategic on the application; you can often pivot later |
+| Documentation | Keep everything. You will need the paper trail. |
+| Workload | Brutal in short bursts, doable with a clear goal and a solid Plan B |
 
 This path took real hustle, a lot of research, and some uncomfortable conversations with the district. It also gave me the confidence that structured, aggressive planning works.
 
@@ -67,16 +79,18 @@ More on the Berkeley side, Statistics major planning, and what came after in fut
 
 Thanks for reading.
 
- - Amir
+- Amir
 
 ---
 
 **Quick links if you're on a similar journey:**
 
-- [assist.org](https://assist.org/)
-- [UC Transfer Admission Guarantee](https://admission.universityofcalifornia.edu/admission-requirements/transfer-requirements/uc-transfer-programs/transfer-admission-guarantee-tag.html)
-- [UC Admissions](https://admission.universityofcalifornia.edu/)
-- UC transfers by major data (campus institutional research / admissions sites)
-- Your local community college dual enrollment / counseling office + high school off-campus policy docs
+| Link | Use |
+|------|-----|
+| [assist.org](https://assist.org/) | Articulation and major prep |
+| [UC TAG](https://admission.universityofcalifornia.edu/admission-requirements/transfer-requirements/uc-transfer-programs/transfer-admission-guarantee-tag.html) | Transfer Admission Guarantee |
+| [UC Admissions](https://admission.universityofcalifornia.edu/) | Official requirements |
+| Campus transfer data | Transfer-by-major stats on campus sites |
+| Local CCC + HS office | Dual enrollment and off-campus policy |
 
 (Details drawn from my actual transcripts, the Amir College Plan spreadsheet, petitions, and public resources as of 2026. Always double-check current requirements and articulation on official sites.)
