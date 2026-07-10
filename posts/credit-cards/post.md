@@ -10,8 +10,6 @@ readTime: "4 min"
 
 I've always liked optimizing stuff in my life, and credit cards are one of those things I treat like a fun game. At 21 I have 8 credit cards, mostly cashback-focused, because my spending is still pretty minimal and I don't travel that often.
 
-Not financial advice. Card terms change. Pay in full.
-
 ## My main cards right now
 
 These are the ones I actually keep in my wallet:
