@@ -207,16 +207,23 @@
  .segment-pill.on-resume { transform: translateX(100%); }
 
  .about-panels {
- display: grid;
- grid-template-columns: 100% 100%;
+ display: block;
  width: 100%;
- transition: transform 0.35s cubic-bezier(0.32, 0.72, 0, 1);
- will-change: transform;
  }
- .about-panels.show-resume { transform: translateX(-100%); }
- .about-panel { width: 100%; min-width: 100%; }
+ .about-panel {
+ display: none;
+ width: 100%;
+ }
+ .about-panel.is-active {
+ display: block;
+ animation: aboutFade 0.22s ease both;
+ }
+ @keyframes aboutFade {
+ from { opacity: 0; transform: translateY(4px); }
+ to { opacity: 1; transform: none; }
+ }
  .about-swipe-wrap {
- overflow: hidden;
+ overflow: visible;
  touch-action: pan-y;
  border-radius: 1.25rem;
  }
@@ -479,7 +486,7 @@
  <div id="about-panels" class="about-panels">
 
  <!-- DNA PANEL -->
- <div class="about-panel px-0.5" data-panel="dna" role="tabpanel">
+ <div class="about-panel is-active px-0.5" data-panel="dna" role="tabpanel">
  <div class="card rounded-2xl sm:rounded-3xl p-6 sm:p-10 lg:p-12">
  <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-3 mb-8 pb-6 border-b resume-rule">
  <div>
@@ -679,6 +686,7 @@
  <div class="flex flex-wrap gap-2 text-sm">
  <span class="px-3 py-1.5 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">SQL</span>
  <span class="px-3 py-1.5 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">Python</span>
+ <span class="px-3 py-1.5 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">Databricks</span>
  <span class="px-3 py-1.5 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">R</span>
  <span class="px-3 py-1.5 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">Jupyter</span>
  <span class="px-3 py-1.5 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">Quarto</span>
@@ -904,24 +912,17 @@
 
  function setAboutTab(tab, animate) {
  aboutTab = tab === 'resume' ? 'resume' : 'dna';
- const panels = document.getElementById('about-panels');
  const pill = document.getElementById('segment-pill');
  document.querySelectorAll('[data-about-tab]').forEach(btn => {
  const on = btn.getAttribute('data-about-tab') === aboutTab;
  btn.classList.toggle('is-active', on);
  btn.setAttribute('aria-selected', on ? 'true' : 'false');
  });
- if (panels) {
- if (animate === false) {
- const prev = panels.style.transition;
- panels.style.transition = 'none';
- panels.classList.toggle('show-resume', aboutTab === 'resume');
- void panels.offsetWidth;
- panels.style.transition = prev || '';
- } else {
- panels.classList.toggle('show-resume', aboutTab === 'resume');
- }
- }
+ // Only the active panel is displayed so page height matches the white card (no grey tail)
+ document.querySelectorAll('.about-panel').forEach(panel => {
+ const on = panel.getAttribute('data-panel') === aboutTab;
+ panel.classList.toggle('is-active', on);
+ });
  if (pill) {
  pill.classList.toggle('on-resume', aboutTab === 'resume');
  pill.classList.remove('on-personality');
