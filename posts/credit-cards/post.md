@@ -44,14 +44,3 @@ To push cashback higher, here's what I'm aiming for:
 | Chase Freedom Flex | 5% rotating categories |
 | Discover it | 5% rotating categories |
 | Travel card later | When I take more trips |
-
-## Bottom line
-
-| Rule | What I do |
-|------|-----------|
-| Real spend | Match cards to what I actually buy, not fantasy travel |
-| Rotating 5% | Activate categories every quarter |
-| Fees | Only if they clearly pay for themselves (IRA match, Global Entry, etc.) |
-| Balance | Pay in full. Cashback loses to interest every time |
-
-I'll update this if the wallet changes.
