@@ -109,7 +109,7 @@
  margin-top: 1.75em; margin-bottom: 0.55em; line-height: 1.2;
  }
  .prose-custom h1 { font-size: 1.85rem; margin-top: 0; }
- .prose-custom h2 { font-size: 1.5rem; }
+ .prose-custom h2 { font-size: 1.35rem; margin-top: 2em; text-align: left; }
  .prose-custom h3 { font-size: 1.25rem; }
  .prose-custom p { margin-bottom: 1em; }
  .prose-custom a { color: #0284c7; text-decoration: underline; text-underline-offset: 3px; }
@@ -117,13 +117,32 @@
  .prose-custom ul, .prose-custom ol { margin: 0.9em 0 1.1em 1.2em; }
  .prose-custom li { margin-bottom: 0.35em; }
  .prose-custom table {
- width: 100%; border-collapse: collapse; margin: 1.25em 0; font-size: 0.92rem;
- display: block; overflow-x: auto; -webkit-overflow-scrolling: touch;
+ width: 100%;
+ max-width: 36rem;
+ margin: 1.5em auto;
+ border-collapse: collapse;
+ font-size: 0.95rem;
+ display: table;
  }
  .prose-custom th, .prose-custom td {
- border: 1px solid var(--line); padding: 0.55rem 0.75rem; text-align: left;
+ border: 1px solid var(--line);
+ padding: 0.65rem 0.9rem;
+ text-align: left;
  }
- .prose-custom th { background: rgba(148,163,184,0.12); font-weight: 600; }
+ .prose-custom th {
+ background: rgba(148,163,184,0.12);
+ font-weight: 600;
+ text-align: center;
+ }
+ .prose-custom td:first-child { font-weight: 600; }
+ @media (max-width: 640px) {
+ .prose-custom table {
+ display: block;
+ overflow-x: auto;
+ -webkit-overflow-scrolling: touch;
+ max-width: 100%;
+ }
+ }
  .prose-custom blockquote {
  border-left: 3px solid #0284c7; padding-left: 1rem; margin: 1.25em 0;
  color: #64748b; font-style: italic;
@@ -680,16 +699,17 @@
 
  <!-- ===================== READER ===================== -->
  <section id="view-reader" class="hidden fade-in">
+ <div class="max-w-2xl mx-auto px-2 sm:px-6">
  <button type="button" id="reader-back" onclick="closeReader()"
- class="mb-5 inline-flex items-center text-sm font-medium gap-x-2 text-slate-500 hover:text-slate-800 dark:hover:text-slate-200">
+ class="mb-6 inline-flex items-center text-sm font-medium gap-x-2 text-slate-500 hover:text-slate-800 dark:hover:text-slate-200">
  ← Back
  </button>
- <div class="max-w-[68ch]">
- <div id="reader-meta" class="flex flex-wrap gap-x-3 gap-y-1 text-xs text-slate-500 mb-3"></div>
- <h1 id="reader-title" class="font-display text-3xl sm:text-4xl md:text-5xl tracking-tight leading-[1.08] mb-6 sm:mb-8"></h1>
- <div id="reader-body" class="prose-custom max-w-none"></div>
- <div class="mt-10 pt-6 border-t border-slate-200 dark:border-slate-800 flex flex-col sm:flex-row gap-3 sm:items-center sm:justify-between">
+ <div id="reader-meta" class="flex flex-wrap justify-center gap-x-3 gap-y-1 text-xs text-slate-500 mb-3 text-center"></div>
+ <h1 id="reader-title" class="font-display text-3xl sm:text-4xl md:text-[2.75rem] tracking-tight leading-[1.1] mb-8 text-center"></h1>
+ <div id="reader-body" class="prose-custom max-w-none mx-auto"></div>
+ <div class="mt-12 pt-6 border-t border-slate-200 dark:border-slate-800 flex flex-col sm:flex-row gap-3 sm:items-center sm:justify-center text-center">
  <button type="button" onclick="showView('home')" class="text-sm text-sky-700 dark:text-sky-400 font-medium">More posts →</button>
+ <span class="hidden sm:inline text-slate-300">·</span>
  <button type="button" onclick="showView('consulting')" class="text-sm text-slate-500 hover:text-sky-600">College Consulting →</button>
  </div>
  </div>
