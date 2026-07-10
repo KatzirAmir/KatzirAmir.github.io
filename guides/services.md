@@ -1,16 +1,16 @@
 ---
 title: "Services - How Working Together Works"
 slug: "services"
-summary: "Simple offering: $40 per 30-minute session. What we cover - majors, dual enrollment, AP balance, TAG, and doable plans."
+summary: "How sessions work. Email for rates."
 ---
 
 # Services - How Working Together Works
 
 ## Pricing
 
-**$40 per 30-minute session** (Google Meet via Calendly).
+**Email me for rates.** Sessions are typically short working calls over Google Meet (via Calendly).
 
-No multi-thousand-dollar packages required. Book what you need. Many families start with one session and continue only if useful.
+No multi-year packages. Book what you need. A lot of families start with one session and continue only if it's useful.
 
 ---
 
