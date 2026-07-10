@@ -22,6 +22,8 @@ These are the ones I actually keep in my wallet:
 | Discover it | 5% quarterly rotating categories |
 | Chase Freedom Flex | 5% quarterly rotating categories |
 
+## Older cards still in the mix
+
 I also have some older cards from Fidelity, Capital One, and a credit union. Robinhood Gold has basically made most of them obsolete, other than my Fidelity card that subsidized my Global Entry (100% worth it).
 
 ## My philosophy (and advice if you're starting young)
