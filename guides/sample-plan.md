@@ -117,7 +117,7 @@ This sample is a **finished** path (everything Done) so you can see the end stat
 If you want a version built around **your** schools and majors:
 
 1. Fill the [interest form](https://docs.google.com/forms/d/e/1FAIpQLSfz5crCMJiG4oHEZLbnzl8clBfOPikkrQ_5DbyNY6DR_mUbKA/viewform)  
-2. Book a session on [Calendly](https://calendly.com/amir-katzir-email/30min)  
+2. Book a free 15-minute intro on [Calendly](https://calendly.com/amir-katzir-email/15min)  
 3. Send transcript + AP list + target majors beforehand  
 
-See also: [How sessions work](services) · [What is IGETC?](igetc) · [Dual enrollment](dual-enrollment) · [UC transfer admission](transfer-admission)
+See also: [How sessions work](#guide/services) · [What is IGETC?](#guide/igetc) · [Dual enrollment](#guide/dual-enrollment) · [UC transfer admission](#guide/transfer-admission)

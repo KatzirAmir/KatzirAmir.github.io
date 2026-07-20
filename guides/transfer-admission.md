@@ -151,7 +151,7 @@ Veterans, UC-to-UC, and other special cases have extra rules - use campus transf
 - IGETC full vs partial decision 
 - Major strategy under capacity constraints 
 
-**Book:** Contact page form → Calendly.
+**Book:** intake form → free 15-minute intro on Calendly (College Consulting page).
 
 ---
 

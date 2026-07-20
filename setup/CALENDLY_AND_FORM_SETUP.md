@@ -1,14 +1,14 @@
 # Calendly + Google Form setup (College Path)
 
 Contact email: **amir.katzir.email@gmail.com**  
-Session: **$40 · 30 minutes**
+Public booking: **free 15-minute intro** (`/15min`). Working sessions scheduled privately after.
 
 The website reads two constants in `index.html`:
 
 ```js
 const CONTACT_EMAIL = 'amir.katzir.email@gmail.com';
-// Live links (session is 30 min; Calendly URL slug may still say 30min):
-const CALENDLY_URL = 'https://calendly.com/amir-katzir-email/30min';
+// Live link: free 15-minute intro
+const CALENDLY_URL = 'https://calendly.com/amir-katzir-email/15min';
 const GOOGLE_FORM_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSfz5crCMJiG4oHEZLbnzl8clBfOPikkrQ_5DbyNY6DR_mUbKA/viewform';
 ```
 
@@ -16,7 +16,7 @@ const GOOGLE_FORM_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSfz5crCMJiG4oH
 
 | Tool | URL |
 |------|-----|
-| Calendly (45-min session) | https://calendly.com/amir-katzir-email/30min |
+| Calendly (free 15-min intro) | https://calendly.com/amir-katzir-email/15min |
 | Google intake form | https://docs.google.com/forms/d/e/1FAIpQLSfz5crCMJiG4oHEZLbnzl8clBfOPikkrQ_5DbyNY6DR_mUbKA/viewform |
 
 ---
@@ -129,7 +129,7 @@ Creates:
 ## Checklist
 - [x] Calendly account on amir.katzir.email@gmail.com  
 - [x] Google Calendar connected (assumed with Calendly)  
-- [x] Event type live: https://calendly.com/amir-katzir-email/30min (45-min session)  
+- [x] Event type live: https://calendly.com/amir-katzir-email/15min (free 15-min intro)  
 - [ ] Payment method decided ($40 later)  
 - [x] Apps Script ran; form live  
 - [x] `CALENDLY_URL` and `GOOGLE_FORM_URL` updated in `index.html`  

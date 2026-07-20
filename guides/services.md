@@ -1,16 +1,20 @@
 ---
 title: "Services - How Working Together Works"
 slug: "services"
-summary: "How sessions work and what a call covers."
+summary: "Free 15-min intro, then optional working sessions."
 ---
 
 # Services - How Working Together Works
 
-## Sessions
+## How engagement works
 
-Sessions are typically short working calls over Google Meet (via Calendly).
+**1. Free 15-minute intro (Google Meet)**  
+Book via Calendly after the intake form. We clarify goals, constraints, and whether a full planning session is worth it.
 
-No multi-year packages. Book what you need. A lot of families start with one session and continue only if it's useful.
+**2. Optional working sessions**  
+If we continue, we schedule longer working calls separately. Logistics are discussed on the Meet — not listed on this site.
+
+No multi-year packages. Start with the intro; continue only if it’s useful.
 
 ---
 
@@ -22,7 +26,7 @@ No multi-year packages. Book what you need. A lot of families start with one ses
 
 ---
 
-## What a session is good for
+## What a working session is good for
 
 ### 1. Major and campus strategy
 - Match interests + transcript + selectivity 
@@ -62,12 +66,10 @@ No multi-year packages. Book what you need. A lot of families start with one ses
 
 ## How to start
 
-1. **Fill the interest / intake form:** 
- [College Path interest form](https://docs.google.com/forms/d/e/1FAIpQLSfz5crCMJiG4oHEZLbnzl8clBfOPikkrQ_5DbyNY6DR_mUbKA/viewform) 
-2. **Book a 30-minute slot** on Calendly: 
- [calendly.com/amir-katzir-email/30min](https://calendly.com/amir-katzir-email/30min) 
- (URL slug may say 30min; the meeting is 30 minutes.) 
-3. **Send materials before the call** (transcript screenshot, course list, target majors) if you have them 
+1. **Fill the interest / intake form** on the College Consulting page 
+2. **Book a free 15-minute intro** on Calendly:  
+   [calendly.com/amir-katzir-email/15min](https://calendly.com/amir-katzir-email/15min) 
+3. **Send materials before the call** if you have them (transcript screenshot, course list, target majors) 
 4. Show up with the #1 question you need answered 
 
 ---

@@ -213,7 +213,7 @@ Short answers. Best ones: **one concrete story + reflection + evidence**. Worst 
 - PIQ topic strategy 
 - Parent alignment so the house runs one plan 
 
-**Book:** intake form → Calendly on the Contact page.
+**Book:** intake form → free 15-minute intro on Calendly (College Consulting page).
 
 ---
 
