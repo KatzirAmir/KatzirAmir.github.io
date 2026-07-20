@@ -149,6 +149,19 @@
  }
  .prose-custom strong { color: var(--ink); font-weight: 600; }
  .prose-custom hr { border: 0; border-top: 1px solid var(--line); margin: 2em 0; }
+ .prose-custom img {
+ max-width: 100%;
+ height: auto;
+ border-radius: 0.75rem;
+ border: 1px solid var(--line);
+ margin: 1.25em 0 1.75em;
+ background: #fff;
+ box-shadow: 0 1px 2px rgb(15 23 42 / 0.04);
+ }
+ .dark .prose-custom img {
+ background: #0f172a;
+ border-color: #334155;
+ }
  .prose-custom code {
  font-size: 0.88em; background: rgba(148,163,184,0.15);
  padding: 0.12em 0.35em; border-radius: 0.3rem;
@@ -394,6 +407,52 @@
  </p>
  </div>
  <div id="guides-grid" class="grid sm:grid-cols-2 gap-4"></div>
+ </div>
+
+ <!-- Sample work showcase -->
+ <div id="my-work" class="mb-12 scroll-mt-24">
+ <div class="mb-5 text-center">
+ <div class="section-label mb-2">My work</div>
+ <h2 class="font-display text-3xl tracking-tight">Sample planning package</h2>
+ <p class="mt-2 text-slate-600 dark:text-slate-400 text-sm sm:text-base max-w-2xl mx-auto">
+ A real dual-enrollment → UC Berkeley Statistics path (with Economics prep), shown the way I deliver it: requirements mapped to courses, term by term.
+ </p>
+ </div>
+ <div id="work-showcase" class="card rounded-2xl sm:rounded-3xl overflow-hidden">
+ <div class="grid lg:grid-cols-2 gap-0">
+ <div class="p-6 sm:p-8 lg:p-10 flex flex-col justify-center order-2 lg:order-1">
+ <div class="text-xs font-semibold uppercase tracking-wider text-sky-700 dark:text-sky-400 mb-2">Deliverable example</div>
+ <h3 class="font-display text-2xl tracking-tight mb-3">College plan workbook</h3>
+ <p class="text-sm sm:text-base text-slate-600 dark:text-slate-400 mb-4">
+ Three tabs — Transfer Prep (IGETC + Econ ASSIST + APs), Berkeley Graduation (Stats major + L&amp;S rules), and a Course Plan you can update each term. Clean black / tan / white layout with blue headers only.
+ </p>
+ <ul class="text-sm text-slate-600 dark:text-slate-400 space-y-2 mb-6 list-disc list-inside">
+ <li>Every requirement next to the course that completed it</li>
+ <li>CIS 107 (SJCC) → Data 8 for Statistics</li>
+ <li>Quarter-by-quarter dual enrollment through graduation</li>
+ </ul>
+ <div class="flex flex-col sm:flex-row gap-3">
+ <button type="button" onclick="loadGuide('sample-plan')"
+ class="btn-primary inline-flex justify-center px-5 py-2.5 rounded-xl text-sm font-semibold">
+ See the walkthrough →
+ </button>
+ <a href="assets/sample-packages/Amir-College-Plan-Sample.xlsx" download
+ class="btn-secondary inline-flex justify-center px-5 py-2.5 rounded-xl text-sm font-semibold">
+ Download Excel sample
+ </a>
+ </div>
+ </div>
+ <div class="bg-slate-50 dark:bg-slate-950/50 p-4 sm:p-6 flex items-center justify-center order-1 lg:order-2 border-b lg:border-b-0 lg:border-l border-slate-100 dark:border-slate-800">
+ <button type="button" onclick="loadGuide('sample-plan')" class="block w-full max-w-md focus:outline-none focus:ring-2 focus:ring-sky-500 rounded-xl">
+ <img src="assets/sample-packages/screenshots/01-transfer-prep-igetc.png"
+ alt="Sample Transfer Prep IGETC tab"
+ class="w-full rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm"
+ loading="lazy" />
+ <span class="block text-center text-xs text-slate-500 mt-2">Transfer Prep tab (excerpt) · click for full guide</span>
+ </button>
+ </div>
+ </div>
+ </div>
  </div>
 
  <!-- Booking -->
@@ -791,6 +850,7 @@
  { slug: 'tag', title: 'What is TAG?', summary: 'Transfer Admission Guarantee, TAP, deadlines.', icon: '✅' },
  { slug: 'services', title: 'How sessions work', summary: 'How sessions work. Email for rates.', icon: '🗓️' }
  ];
+ // sample-plan is featured in the "My work" section (not the free-resources grid)
 
  let readerReturn = 'home';
  let currentFilterTag = null;
