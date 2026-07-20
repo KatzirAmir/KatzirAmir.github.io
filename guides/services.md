@@ -1,14 +1,14 @@
 ---
 title: "Services - How Working Together Works"
 slug: "services"
-summary: "How sessions work. Email for rates."
+summary: "How sessions work and what a call covers."
 ---
 
 # Services - How Working Together Works
 
-## Pricing
+## Sessions
 
-**Email me for rates.** Sessions are typically short working calls over Google Meet (via Calendly).
+Sessions are typically short working calls over Google Meet (via Calendly).
 
 No multi-year packages. Book what you need. A lot of families start with one session and continue only if it's useful.
 
