@@ -1,12 +1,12 @@
 ---
-title: "Credit Card Optimization: My Cashback Setup at 21"
+title: "Credit Card Optimization"
 date: "2026-06-15"
 tags: ["finance"]
 excerpt: "How I treat cashback like a game at 21: what is in my wallet now, how I started, and the setup I am aiming for."
 readTime: "4 min"
 ---
 
-# Credit Card Optimization: My Cashback Setup at 21
+# Credit Card Optimization
 
 I've always liked optimizing stuff in my life, and credit cards are one of those things I treat like a fun game. At 21 I have 8 credit cards, mostly cashback-focused, because my spending is still pretty minimal and I don't travel that often.
 
