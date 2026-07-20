@@ -1,5 +1,4 @@
-# Force GitHub Pages deploy via Actions (unblocks stuck branch builds).
-# Repo Settings → Pages → Source must be "GitHub Actions".
+﻿# Deploy static site to GitHub Pages on every push to main
 name: Deploy static site to Pages
 
 on:
