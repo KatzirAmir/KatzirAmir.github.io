@@ -1,14 +1,14 @@
 ---
 title: "Sample College Plan Package"
 slug: "sample-plan"
-summary: "What a planning deliverable looks like — tabs, screenshots, and how we use your schedule."
+summary: "What a planning deliverable looks like: tabs, screenshots, and how we use your schedule."
 ---
 
 # Sample College Plan Package
 
 This is an example of the workbook-style plan I build with families. The sample path is real dual enrollment at Foothill (plus SJCC) into **UC Berkeley Statistics**, with **Economics** transfer prep tracked in parallel and **L&S** college rules used for graduation (first year of the CDSS transition).
 
-The file is intentionally simple: **black, tan, white, and blue headers only** — three tabs, no conditional formatting.
+The file is intentionally simple: **black, tan, white, and blue headers only**, three tabs, no conditional formatting.
 
 **Download the sample workbook:** [Amir-College-Plan-Sample.xlsx](assets/sample-packages/Amir-College-Plan-Sample.xlsx)
 
@@ -30,13 +30,13 @@ You do **not** need a polished spreadsheet. A screenshot of grades, a list of AP
 
 ## The three tabs (with examples)
 
-### 1. Transfer Prep — AP + IGETC + Econ ASSIST
+### 1. Transfer Prep: AP + IGETC + Econ ASSIST
 
 One sheet for everything *before* Berkeley:
 
-1. **AP exams** (names only — no scores on the deliverable)  
-2. **IGETC** UC pattern for Foothill — each area next to the course that finished it  
-3. **Economics ASSIST prep** — Berkeley Econ prereqs mapped to Foothill courses  
+1. **AP exams** (names only, no scores on the deliverable)  
+2. **IGETC** UC pattern for Foothill: each area next to the course that finished it  
+3. **Economics ASSIST prep**: Berkeley Econ prereqs mapped to Foothill courses  
 
 **What I do with your materials:** pull the official IGETC list for your CCC/term, pull ASSIST for your major/year, then fill “Completed with” from your transcript.
 
@@ -54,7 +54,7 @@ In this sample:
 
 ---
 
-### 2. Berkeley Graduation — Statistics major + L&S rules
+### 2. Berkeley Graduation: Statistics major + L&S rules
 
 After transfer, the plan switches to **graduation** boxes:
 
@@ -70,11 +70,11 @@ After transfer, the plan switches to **graduation** boxes:
 
 ---
 
-### 3. Course Plan — term by term
+### 3. Course Plan: term by term
 
 This is the schedule view: **term → course → units → category → short description**.
 
-Category is a plain dropdown (`Stats Major`, `IGETC`, `Multiple`, etc.) so you can filter — **no rainbow conditional formatting**.
+Category is a plain dropdown (`Stats Major`, `IGETC`, `Multiple`, etc.) so you can filter, with **no rainbow conditional formatting**.
 
 **What I do:** sequence major prep first, stack IGETC courses that double-count (e.g. ECON for Area 4 + Econ prep), and keep the load realistic by term.
 
@@ -93,11 +93,11 @@ Highlights from the sample sequence:
 
 ## How a session uses this
 
-1. **Intake** — transcript, APs, targets, constraints  
-2. **Requirement dump** — IGETC + ASSIST + campus/college rules for your year  
-3. **Map** — every box gets a course (or a clear “take later at Cal”)  
-4. **Sequence** — Course Plan tab for the next 2–6 terms  
-5. **Handoff** — you keep the file; we update when grades post or plans change  
+1. **Intake:** transcript, APs, targets, constraints  
+2. **Requirement dump:** IGETC + ASSIST + campus/college rules for your year  
+3. **Map:** every box gets a course (or a clear “take later at Cal”)  
+4. **Sequence:** Course Plan tab for the next 2–6 terms  
+5. **Handoff:** you keep the file; we update when grades post or plans change  
 
 This sample is a **finished** path (everything Done) so you can see the end state. A live client file usually mixes Done / Planned for upcoming terms.
 
@@ -105,7 +105,7 @@ This sample is a **finished** path (everything Done) so you can see the end stat
 
 ## Notes
 
-- Articulations are **year-specific** — we re-check [assist.org](https://assist.org/) for the terms you actually enroll.  
+- Articulations are **year-specific**. We re-check [assist.org](https://assist.org/) for the terms you actually enroll.  
 - IGETC lists change; after Summer 2025 many colleges move to Cal-GETC (catalog rights matter).  
 - This is a planning aid, not official advising from Foothill, UC Berkeley, or ASSIST.  
 - Admission is never guaranteed.

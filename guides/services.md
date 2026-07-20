@@ -12,7 +12,7 @@ summary: "Free 15-min intro, then optional working sessions."
 Book via Calendly after the intake form. We clarify goals, constraints, and whether a full planning session is worth it.
 
 **2. Optional working sessions**  
-If we continue, we schedule longer working calls separately. Logistics are discussed on the Meet — not listed on this site.
+Longer working calls can be scheduled after the intro if useful.
 
 No multi-year packages. Start with the intro; continue only if it’s useful.
 
